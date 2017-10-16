@@ -1,8 +1,8 @@
-var start_button = document.querySelector(".start_button");
+var $start_button = $(".start_button");
 
 // Switch between main page to play page
 function go_to_game() {
-    document.querySelector(".game_title").style.display = "none"
-    document.querySelector(".play_area").style.display = "block"
+    $(".game_title").css("display", "none")
+    $(".play_area").css("display","block")
 }
-start_button.addEventListener("click", go_to_game)
+$start_button.click(go_to_game)
