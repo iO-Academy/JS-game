@@ -5,5 +5,11 @@ $('body').on('click', '.cowTarget', function(e) {
 function saveCow(e) {
     var clickedCow = e.target
     clickedCow.classList.remove('cowTarget')
-    console.log('pet the cow')
+    incrementScore()
+}
+
+function incrementScore() {
+    var scoreElement = $('.score_value')
+    var currentScore = parseInt(scoreElement.textContent)
+    scoreElement.textContent = currentScore + 1
 }
