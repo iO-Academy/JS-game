@@ -12,6 +12,24 @@
     position: relative;
     overflow: hidden;
 }
+.cow_target_container {
+    width: 100px;
+    height: 100px;
+}
+
+.cow_target{
+    height: 114px;
+    width: 100px;
+    background-image: url("Assets/cow-100px.png");
+    z-index: 10;
+    display: block;
+}
+.parachute_target{
+    height: 78px;
+    width: 100px;
+    background-image: url("Assets/parachute-100px.png");
+    display: block;
+}
 /*Game main page*/
 .game_title,
 .game_instruction,
