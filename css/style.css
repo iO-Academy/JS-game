@@ -132,9 +132,15 @@
     width: 140px;
     right: 0;
     background-color: grey;
+    z-index: 20;
 }
 .score p {
     margin: 0;
     text-align: center;
     line-height: 100px;
+}
+.spikes {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
 }
