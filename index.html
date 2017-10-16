@@ -7,18 +7,36 @@
 </head>
 <body>
     <div class="game">
-        <div class="absolute top_nav">
-            <div class="absolute statistic">
-                <p class="lives">Lives: 5</p>
-                <p class="pause">Pause</p>
+        <div class="game_title absolute">
+            <div class="start_buttons">
+                <p class="buttons"><a class="start_button" href="#">Start</a></p>
+                <p class="buttons"><a class="instruction_button" href="#">Instruction</a></p>
             </div>
         </div>
-        <div class="absolute bottom">
-            <div class="absolute score">
-                <p>Score: 10</p>
+        <div class="game_pause absolute">
+            <div class="start_buttons">
+                <p class="buttons"><a class="start_button" href="#">Start Again</a></p>
+                <p class="buttons"><a class="resume" href="#">Resume</a></p>
+            </div>
+        </div>
+        <div class="play_area">
+            <div class="absolute top_nav">
+                <div class="absolute statistic">
+                    <p class="lives">Lives: 5</p>
+                    <p class="pause"><a class="pause_button" href="#">Pause</a></p>
+                </div>
+            </div>
+            <div class="absolute bottom">
+                <div class="absolute score">
+                    <p>Score: 10</p>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+</script>
 <script src="js/main.js"></script>
 </html>
