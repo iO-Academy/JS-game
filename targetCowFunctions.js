@@ -13,3 +13,18 @@ function incrementScore() {
     var currentScore = parseInt(scoreElement.textContent)
     scoreElement.textContent = currentScore + 1
 }
+
+function loseLife() {
+    var livesElement = $('.lives_value')
+    var currentLives = parseInt(livesElement.textContent)
+    var updatedLives = currentLives - 1
+    if (updatedLives === 0) {
+        endGame()
+    } else {
+        livesElement.textContent = updatedLives
+    }
+}
+
+function endGame() {
+    
+}
