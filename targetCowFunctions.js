@@ -1,16 +1,18 @@
 
-
-$('body').on('click', '.cow_target', function(e) {
+$('body').on('click', '.js_clickable_cow', function(e) {
     save_cow(e)
-    rocket_cow()
-    remove_paracute()
+
+
 })
 
 function save_cow(e) {
     var clicked_cow = e.target
-
-    clicked_cow.classList.remove('cow_target')
+    $(clicked_cow).removeClass('js_clickable_cow')
+    $(clicked_cow).parent().addClass('rocket_cow')
+    rocket_cow()
     increment_score()
+
+
 }
 
 function increment_score() {
@@ -45,16 +47,23 @@ function remove_cow(cow) {
 
 //rocket on click, move to bottom corner
 function rocket_cow() {
-    $('.cow_target').css('background-image',"url('../img/cow-with-rocket-100px.png')")
-    $('.cow_target').css('z-index','4')
-    $('.cow_target').animate({
-            top: 490,
+
+
+    $('.rocket_cow .cow_target').css('background-image',"url('../JS-game/js/rocket_cow.png')")
+    $('.rocket_cow .cow_target').css("height", "140px")
+    $('.rocket_cow').css("z-index", "4")
+    $('.rocket_cow .parachute_target').css("visibility", "hidden")
+
+    $('.rocket_cow').stop()
+    $('.rocket_cow').animate({
+
+            top: 400,
             left: 700
+
         }, 750,
-        remove_cow($('.cow_target'))
-}
+        function () {
 
-function  remove_paracute() {
-    remove_cow($('.paracute_target'))
-
+            increment_score()
+            remove_cow($('.rocket_cow'))
+        })
 }
