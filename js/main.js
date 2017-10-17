@@ -19,6 +19,11 @@ function create_cow(column_number, fall_time) {
     $(".play_area").append($container_div);
     console.log('fish')
     $container_div.animate({ top: '343px'}, fall_time, function () {
+
+        $('.cow_target', this).removeClass('js_clickable_cow')
+        $('.parachute_target', this).css("visibility", "hidden")
+        $('.cow_target', this).css("background-image", "url('../JS-game/js/dead_cow.png')")
+        $(this).fadeOut('slow')
     })
 }
 
@@ -36,7 +41,6 @@ function increase_speed() {
         cow_time -= 100
     }
 }
-
 
 
 $start_button.click(go_to_game)
