@@ -2,7 +2,6 @@ var $start_button = $(".start_button");
 
 function cowTimeRelease() {
     createCow(5, 4000)
-
 }
 
 function createCow(columnNumber, fallTime) {
@@ -27,4 +26,3 @@ function go_to_game() {
     setInterval(cowTimeRelease, 3000)
 }
 $start_button.click(go_to_game)
-
