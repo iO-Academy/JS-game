@@ -35,7 +35,8 @@
 /*Game main page*/
 .game_title,
 .game_instruction,
-.game_pause {
+.game_pause,
+.game_over {
     width: 100%;
     height: 100%;
     background-color: #00d59e;
@@ -85,14 +86,16 @@
     font-weight: bold;
 }
 .go_to_start,
-.game_pause a {
+.game_pause a,
+.game_over a {
     display: block;
     width: 100%;
     height: 100%;
     text-decoration: none;
     transition: .3s;
 }
-.go_to_start:hover {
+.go_to_start:hover,
+.game_over a:hover{
     background-color: #fff;
     color: #00d59e;
 }
@@ -177,4 +180,11 @@
     position: absolute;
     z-index: 10;
     bottom: 0;
+}
+
+.game_over {
+    display: none;
+}
+.game_over h1 {
+    text-align: center;
 }
