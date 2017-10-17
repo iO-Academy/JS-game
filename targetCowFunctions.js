@@ -4,6 +4,7 @@ $('body').on('click', '.cowTarget', function(e) {
 
 function saveCow(e) {
     var clickedCow = e.target
+
     clickedCow.classList.remove('cowTarget')
     incrementScore()
 }
@@ -18,6 +19,7 @@ function loseLife() {
     var livesElement = $('.lives_value')
     var currentLives = parseInt(livesElement.textContent)
     var updatedLives = currentLives - 1
+
     if (updatedLives === 0) {
         endGame()
     } else {
