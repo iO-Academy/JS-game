@@ -45,11 +45,10 @@ function remove_cow(cow) {
 //rocket on click, move to bottom corner
 function rocket_cow() {
     $(cow).css('background-image',"url('cow-with-rocket-100px.png')")
-    $(cow).css('height','140px')
     $(cow).animate({
-            top: "83%",
-            left: "87%"
-        }, 7500,
+            top: 490,
+            left: 700
+        }, 750,
         remove_cow(cow)
 }
 
