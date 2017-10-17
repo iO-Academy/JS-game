@@ -3,6 +3,7 @@
 $('body').on('click', '.cow_target', function(e) {
     save_cow(e)
     rocket_cow()
+    remove_paracute()
 })
 
 function save_cow(e) {
@@ -44,11 +45,15 @@ function remove_cow(cow) {
 
 //rocket on click, move to bottom corner
 function rocket_cow() {
-    $(cow).css('background-image',"url('cow-with-rocket-100px.png')")
-    $(cow).animate({
+    $('.cow_target').css('background-image',"url('../img/cow-with-rocket-100px.png')")
+    $('.cow_target').animate({
             top: 490,
             left: 700
         }, 750,
-        remove_cow(cow)
+        remove_cow($('.cow_target'))
 }
 
+function  remove_paracute() {
+    remove_cow($('.paracute_target'))
+
+}
