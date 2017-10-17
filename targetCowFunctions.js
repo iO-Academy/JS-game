@@ -1,36 +1,36 @@
 
 
-$('body').on('click', '.cowTarget', function(e) {
+$('body').on('click', '.cow_target', function(e) {
     saveCow(e)
     rocket_cow()
 })
 
-function saveCow(e) {
-    var clickedCow = e.target
+function save_cow(e) {
+    var clicked_cow = e.target
 
-    clickedCow.classList.remove('cowTarget')
-    incrementScore()
+    clicked_cow.classList.remove('cowTarget')
+    increment_score()
 }
 
-function incrementScore() {
-    var scoreElement = $('.score_value')
-    var currentScore = parseInt(scoreElement.textContent)
-    scoreElement.textContent = currentScore + 1
+function increment_score() {
+    var score_element = $('.score_value')
+    var current_score = parseInt(score_element.textContent)
+    score_element.textContent = current_score + 1
 }
 
-function loseLife() {
-    var livesElement = $('.lives_value')
-    var currentLives = parseInt(livesElement.textContent)
-    var updatedLives = currentLives - 1
+function lose_life() {
+    var lives_element = $('.lives_value')
+    var current_lives = parseInt(lives_element.textContent)
+    var updated_lives = current_lives - 1
 
-    if (updatedLives === 0) {
-        endGame()
+    if (updated_lives === 0) {
+        end_game()
     } else {
-        livesElement.textContent = updatedLives
+        lives_element.textContent = updated_lives
     }
 }
 
-function endGame() {
+function end_game() {
     
 }
 
