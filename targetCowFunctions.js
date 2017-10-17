@@ -1,14 +1,14 @@
 
 
 $('body').on('click', '.cow_target', function(e) {
-    saveCow(e)
+    save_cow(e)
     rocket_cow()
 })
 
 function save_cow(e) {
     var clicked_cow = e.target
 
-    clicked_cow.classList.remove('cowTarget')
+    clicked_cow.classList.remove('cow_target')
     increment_score()
 }
 
