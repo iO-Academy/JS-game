@@ -1,4 +1,6 @@
 
+
+
 $('body').on('click', '.js_clickable_cow', function(e) {
     console.log(e)
     save_cow(e)
@@ -15,31 +17,42 @@ function save_cow(e) {
 
 function increment_score() {
     var score_element = parseInt(document.querySelector(".score_value").textContent) + 1
-    console.log(score_element)
     document.querySelector(".score_value").textContent = score_element
-    console.log(score_element)
 }
 
 function lose_life() {
-    var lives_element = $('.lives_value')
-    var current_lives = parseInt(lives_element.textContent)
-    var updated_lives = current_lives - 1
+    var lives_element = get_lives() - 1
+    document.querySelector(".lives_value").textContent = lives_element
 
-    if (updated_lives === 0) {
+    console.log(lives_element)
+    if (lives_element === 0) {
         end_game()
-    } else {
-        lives_element.textContent = updated_lives
     }
+
+}
+
+function get_lives() {
+    return parseInt(document.querySelector(".lives_value").textContent)
+
 }
 
 function end_game() {
-    
+    $('.cow_target_container').stop()
+    $('.cow_target_container').remove()
+    clearTimeout(timer)
+    document.querySelector(".play_area").style.display = "none"
+    document.querySelector(".game_over").style.display = "block"
+    $(".score_result").text(document.querySelector(".score_value").textContent)
+
 }
+
 
 //remove cow which falls down
 function remove_cow(cow) {
     setTimeout(function() {
-        $(cow).fadeOut('slow')
+        $(cow).fadeOut('slow', function () {
+            $(this).remove()
+        })
     }, 200);
 }
 

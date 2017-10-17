@@ -1,6 +1,7 @@
 var $start_button = $(".start_button");
 var fall_time = 4000
 var cow_time = 3000
+var timer
 
 function cow_time_release() {
     var column = Math.floor(Math.random() * 6)  // Random number from 0 to 5.
@@ -17,29 +18,42 @@ function create_cow(column_number, fall_time) {
     $container_div.css('top','-177px')
     $container_div.css('left', horizontal_position + 'px')
     $(".play_area").append($container_div);
-    console.log('fish')
-    $container_div.animate({ top: '343px'}, fall_time, function () {
+    // console.log('fish')
+    $container_div.animate({ top: '343px'}, fall_time, dead_cow)
 
-        $('.cow_target', this).removeClass('js_clickable_cow')
-        $('.parachute_target', this).css("visibility", "hidden")
-        $('.cow_target', this).css("background-image", "url('../JS-game/js/dead_cow.png')")
-        $(this).fadeOut('slow')
-    })
+    // if( get_lives() > 2) {
+    timer = setTimeout(cow_time_release, cow_time)
+    // }
 }
 
 // Switch between main page to play page
 function go_to_game() {
+    document.querySelector(".lives_value").textContent = 5
+    document.querySelector(".score_value").textContent = 0
+    cow_time = 3000
+    fall_time = 4000
     $(".game_title").css("display", "none")
     $(".play_area").css("display","block")
-    setInterval(cow_time_release, cow_time)
+    cow_time_release()
 }
 
 //Increase speed
+
 function increase_speed() {
-    if (cow_time > 300 && fall_time > 400) {
+    if (cow_time > 800 && fall_time > 400) {
         fall_time -= 100
         cow_time -= 100
     }
+}
+
+function dead_cow() {
+    $('.cow_target', this).removeClass('js_clickable_cow')
+    $('.parachute_target', this).css("visibility", "hidden")
+    $('.cow_target', this).css("background-image", "url('../JS-game/js/dead_cow.png')")
+    $(this).fadeOut('slow', function () {
+        $(this).remove()
+    })
+    lose_life()
 }
 
 
