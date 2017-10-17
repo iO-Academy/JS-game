@@ -46,6 +46,7 @@ function remove_cow(cow) {
 //rocket on click, move to bottom corner
 function rocket_cow() {
     $('.cow_target').css('background-image',"url('../img/cow-with-rocket-100px.png')")
+    $('.cow_target').css('z-index','4')
     $('.cow_target').animate({
             top: 490,
             left: 700
