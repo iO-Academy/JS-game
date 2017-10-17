@@ -30,8 +30,9 @@ function endGame() {
 }
 
 //remove cow which falls down
-function remeve_cow(cow) {
+function remove_cow(cow) {
     setTimeout(function() {
         $(cow).fadeOut('slow')
     }, 200);
 }
+
