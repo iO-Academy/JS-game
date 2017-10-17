@@ -2,23 +2,22 @@ var $start_button = $(".start_button");
 var fall_time = 4000
 var cow_time = 3000
 
-function cowTimeRelease() {
+function cow_time_release() {
     increase_speed()
-    createCow(5, fall_time)
-}
+    create_cow(5, fall_time)
 
-function createCow(columnNumber, fallTime) {
+function create_cow(column_number, fall_time) {
 
-    horizontalPositions = [0,1,2,3,4,5]
-    horizontalPosition = horizontalPositions[columnNumber]
+    horizontal_positions = [0,1,2,3,4,5]
+    horizontal_position = horizontal_positions[column_number]
 
-    var $containerDiv = $("<div class='cow_target_container absolute'><span class='parachute_target'></span>" +
+    var $container_div = $("<div class='cow_target_container absolute'><span class='parachute_target'></span>" +
         "<span class='cow_target'></span></div>")
-    $containerDiv.css('top','-177px')
-    $containerDiv.css('left', columnNumber+ 'px')
-    $(".play_area").append($containerDiv);
+    $container_div.css('top','-177px')
+    $container_div.css('left', column_number+ 'px')
+    $(".play_area").append($container_div);
     console.log('fish')
-    $containerDiv.animate({ top: '343px'}, fallTime, function () {
+    $container_div.animate({ top: '343px'}, fall_time, function () {
     })
 }
 
@@ -26,9 +25,8 @@ function createCow(columnNumber, fallTime) {
 function go_to_game() {
     $(".game_title").css("display", "none")
     $(".play_area").css("display","block")
-    setInterval(cowTimeRelease, cow_time)
+    setInterval(cow_time_release, cow_time)
 }
-$start_button.click(go_to_game)
 
 //Increase speed
 function increase_speed() {
@@ -37,3 +35,5 @@ function increase_speed() {
         cow_time -= 100
     }
 }
+$start_button.click(go_to_game)
+
