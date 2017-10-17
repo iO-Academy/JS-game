@@ -1,8 +1,10 @@
 var $start_button = $(".start_button");
+var fall_time = 4000
+var cow_time = 3000
 
 function cowTimeRelease() {
-    createCow(5, 4000)
-
+    increase_speed()
+    createCow(5, fall_time)
 }
 
 function createCow(columnNumber, fallTime) {
@@ -24,7 +26,14 @@ function createCow(columnNumber, fallTime) {
 function go_to_game() {
     $(".game_title").css("display", "none")
     $(".play_area").css("display","block")
-    setInterval(cowTimeRelease, 3000)
+    setInterval(cowTimeRelease, cow_time)
 }
 $start_button.click(go_to_game)
 
+//Increase speed
+function increase_speed() {
+    if (cow_time > 300 && fall_time > 400) {
+        fall_time -= 100
+        cow_time -= 100
+    }
+}
