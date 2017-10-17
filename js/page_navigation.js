@@ -18,6 +18,7 @@ function initiate_game() {
     })
 
     $('.pause_button').on('click', pause_game)
+    $('.resume_button').on('click', resume_game)
 }
 
 
@@ -29,8 +30,10 @@ function pause_game() {
     $(".game_title").css("display", "none")
     $(".game_pause").css("display", "block")
     $(".play_area").css("display","none")
-
-    $('.resume_button').on('click', resume_game)
+    clearTimeout(timeout_id)
+    $('.cow_target_container').each(function (){
+        $(this).pause()
+    })
 
     $('body').off('keypress')
 
@@ -52,8 +55,11 @@ function resume_game() {
     $(".game_title").css("display", "none")
     $(".game_pause").css("display", "none")
     $(".play_area").css("display","block")
+    cow_time_release ()
+    $('.cow_target_container').each(function (){
+        $(this).resume()
+    })
 
-    $('.pause_button').on('click', pause_game)
 
     $('body').off('keypress')
 

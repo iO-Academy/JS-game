@@ -20,7 +20,9 @@ function create_cow(column_number, fall_time) {
     console.log('fish')
     $container_div.animate({ top: '343px'}, fall_time, function () {
     })
-    setTimeout(cow_time_release, cow_time)
+    $("#js_timeout_substitute").animate({
+      width: '10px'}, cow_time)
+    timeout_id=setTimeout(cow_time_release, cow_time)
 }
 
 // Switch between main page to play page
@@ -33,7 +35,7 @@ function go_to_game() {
 //Increase speed
 function increase_speed() {
     if (cow_time > 500 && fall_time > 1000) {
-        fall_time *= 0.9
+        fall_time *= .9
         cow_time *= .9
     }
 }
