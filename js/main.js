@@ -1,18 +1,18 @@
 var $start_button = $(".start_button");
 
 function cow_time_release() {
-    create_cow(5, 4000)
+    var column = Math.floor(Math.random() * 6)  // Random number from 0 to 5.
+    create_cow(column, 4000)
 }
 
 function create_cow(column_number, fall_time) {
 
-    horizontal_positions = [0,1,2,3,4,5]
-    horizontal_position = horizontal_positions[column_number]
+    var horizontal_position = 5 + 110 * column_number
 
     var $container_div = $("<div class='cow_target_container absolute'><span class='parachute_target'></span>" +
         "<span class='cow_target'></span></div>")
     $container_div.css('top','-177px')
-    $container_div.css('left', column_number+ 'px')
+    $container_div.css('left', horizontal_position + 'px')
     $(".play_area").append($container_div);
     console.log('fish')
     $container_div.animate({ top: '343px'}, fall_time, function () {
