@@ -1,5 +1,8 @@
+
+
 $('body').on('click', '.cowTarget', function(e) {
     saveCow(e)
+    rocket_cow()
 })
 
 function saveCow(e) {
@@ -34,5 +37,17 @@ function remove_cow(cow) {
     setTimeout(function() {
         $(cow).fadeOut('slow')
     }, 200);
+}
+
+
+//rocket on click, move to bottom corner
+function rocket_cow() {
+    $(cow).css('background-image',"url('cow-with-rocket-100px.png')")
+    $(cow).css('height','140px')
+    $(cow).animate({
+            top: "83%",
+            left: "87%"
+        }, 7500,
+        remove_cow(cow)
 }
 
