@@ -5,7 +5,7 @@ var cow_time = 3000
 function cow_time_release() {
     increase_speed()
     create_cow(5, fall_time)
-
+}
 function create_cow(column_number, fall_time) {
 
     horizontal_positions = [0,1,2,3,4,5]
@@ -36,4 +36,3 @@ function increase_speed() {
     }
 }
 $start_button.click(go_to_game)
-
