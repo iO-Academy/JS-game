@@ -13,7 +13,7 @@ function create_cow(column_number, fall_time) {
     var horizontal_position = 5 + 110 * column_number
 
     var $container_div = $("<div class='cow_target_container absolute'><span class='parachute_target'></span>" +
-        "<span class='cow_target'></span></div>")
+        "<span class='cow_target js_clickable_cow'></span></div>")
     $container_div.css('top','-177px')
     $container_div.css('left', horizontal_position + 'px')
     $(".play_area").append($container_div);
@@ -37,4 +37,7 @@ function increase_speed() {
     }
 }
 
+
+
 $start_button.click(go_to_game)
+
