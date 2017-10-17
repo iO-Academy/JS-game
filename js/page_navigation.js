@@ -6,6 +6,8 @@ function initiate_game() {
     $(".game_title").css("display", "none")
     $(".game_pause").css("display", "none")
     $(".play_area").css("display","block")
+    $(".instructions").css("display", "none")
+
 
     $('body').off('keypress')
 
@@ -29,8 +31,10 @@ function pause_game() {
     $(".game_title").css("display", "none")
     $(".game_pause").css("display", "block")
     $(".play_area").css("display","none")
+    $(".instructions").css("display", "none")
 
     $('.resume_button').on('click', resume_game)
+    $('.instructions_button').on('click', display_instructions)
 
     $('body').off('keypress')
 
@@ -52,6 +56,7 @@ function resume_game() {
     $(".game_title").css("display", "none")
     $(".game_pause").css("display", "none")
     $(".play_area").css("display","block")
+    $(".instructions").css("display", "none")
 
     $('.pause_button').on('click', pause_game)
 
@@ -66,11 +71,29 @@ function resume_game() {
     })
 }
 
+function display_instructions() {
+    // $(".game_title").css("display", "none")
+    // $(".game_pause").css("display", "none")
+    // $(".play_area").css("display","none")
+    $(".instructions").css("display", "block")
+
+    $('body').off('keypress')
+
+    $('.close_instructions_button').on('click', close_instructions)
+}
+
+function close_instructions() {
+    $(".instructions").css("display", "none")
+}
+
 //Shows game_title page and adds initial event listener to initiate the game
 $(".game_title").css("display", "block")
 $(".game_pause").css("display", "none")
 $(".play_area").css("display","none")
+$(".instructions").css("display", "none")
+
 $('.start_button').click(initiate_game)
+$('.instructions_button').click(display_instructions)
 
 
 
