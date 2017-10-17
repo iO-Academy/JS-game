@@ -21,10 +21,8 @@
     background-color: #00d59e;
     position: absolute;
 }
-.game_title {
-    display: block;
-}
-.start_buttons {
+.start_buttons,
+.resume_buttons {
     margin-top: 250px;
 }
 .buttons {
@@ -35,7 +33,8 @@
     line-height: 50px;
     border: 3px solid #fff;
 }
-.game_title a {
+.game_title a,
+.game_pause a {
     display: block;
     width: 100%;
     height: 100%;
@@ -43,7 +42,8 @@
     text-transform: uppercase;
     transition: .3s;
 }
-.game_title a:hover {
+.game_title a:hover,
+.game_pause a:hover {
     background-color: #fff;
     color: #00d59e;
 }
@@ -64,29 +64,30 @@
     font-size: 20px;
     font-weight: bold;
 }
-.go_to_start,
-.game_pause a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    transition: .3s;
-}
-.go_to_start:hover {
-    background-color: #fff;
-    color: #00d59e;
-}
 
-/*Pause page*/
-.game_pause {
-    display: none;
-    background-color: rgba(0, 213, 158, 0.63);
-    z-index: 10;
-}
-.game_pause a:hover {
-    background-color: #fff;
-    color: #00d59e;
-}
+/*.go_to_start,*/
+/*.game_pause a {*/
+    /*display: block;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*text-decoration: none;*/
+    /*transition: .3s;*/
+/*}*/
+/*.go_to_start:hover {*/
+    /*background-color: #fff;*/
+    /*color: #00d59e;*/
+/*}*/
+
+/*!*Pause page*!*/
+/*.game_pause {*/
+    /*display: none;*/
+    /*background-color: rgba(0, 213, 158, 0.63);*/
+    /*z-index: 10;*/
+/*}*/
+/*.game_pause a:hover {*/
+    /*background-color: #fff;*/
+    /*color: #00d59e;*/
+/*}*/
 
 /*Play area*/
 .top_nav {
