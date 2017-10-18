@@ -42,6 +42,17 @@
     position: absolute;
 }
 
+.instructions {
+    width: 75%;
+    height: 75%;
+    background-color: #22A7F4;
+    position: absolute;
+    text-align: justify;
+    margin-left: 100px;
+    margin-top: 75px;
+    padding: 25px;
+}
+
 .start_buttons,
 .resume_buttons {
     margin-top: 250px;
@@ -57,7 +68,8 @@
 }
 
 .game_title a,
-.game_pause a {
+.game_pause a,
+.instructions a {
     display: block;
     width: 100%;
     height: 100%;
@@ -67,7 +79,8 @@
 }
 
 .game_title a:hover,
-.game_pause a:hover {
+.game_pause a:hover,
+.instructions a:hover {
     background-color: #fff;
     color: #00d59e;
 }
