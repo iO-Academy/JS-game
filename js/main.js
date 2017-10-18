@@ -21,14 +21,12 @@ function create_cow(fall_time) {
 
     // Plus 5 because cows are 10 pixels narrower than the 110 pixels wide columns.
     var horizontal_position = 5 + (110 * column_number)
-
     var $container_div = $("<div class='cow_target_container absolute'>" +
         "<div class='parachute_target'></div>" +
         "<div class='cow_target js_clickable_cow'></div>" +
         "</div>")
 
     $container_div.css({'top':'-177px', 'left': horizontal_position + 'px'})
-
     $(".play_area").append($container_div);
     $container_div.animate({ top: '343px'}, fall_time, dead_cow)
 }
@@ -45,9 +43,6 @@ function go_to_game() {
     $(".play_area").css("display","block")
     game_loop()
 }
-
-/**
- * Reduces interval for cows being created and increases speed at which they fa
 
 /**
  * Removed cows when they hit the spikes, make them fade out and change image. Also minus a life.
