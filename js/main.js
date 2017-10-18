@@ -37,8 +37,8 @@ function create_cow(fall_time) {
  * Switch from intro page to playing page
  */
 function go_to_game() {
-    document.querySelector(".lives_value").textContent = 5
-    document.querySelector(".score_value").textContent = 0
+    $(".lives_value").text("5")
+    $(".score_value").text("0")
     interval_between_cows = 3000
     fall_time = 4000
     $(".game_title").css("display", "none")
