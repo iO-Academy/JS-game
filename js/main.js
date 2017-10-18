@@ -1,30 +1,55 @@
-var $start_button = $(".start_button");
+var fall_time = 4000
+var interval_between_cows = 3000
 
-function cowTimeRelease() {
-    createCow(5, 4000)
-
+/**
+ * iterates core functions
+ */
+function game_loop() {
+    increase_speed()
+    create_cow(fall_time)
+    setTimeout(game_loop, interval_between_cows)
 }
 
-function createCow(columnNumber, fallTime) {
+/**
+ * creates new cows
+ *
+ * @param fall_time  number time it takes for cow to fall
+ */
+function create_cow(fall_time) {
+    var column_number = Math.floor(Math.random() * 6)  // Random number from 0 to 5.
 
-    horizontalPositions = [0,1,2,3,4,5]
-    horizontalPosition = horizontalPositions[columnNumber]
+    // Plus 5 because cows are 10 pixels narrower than the 110 pixels wide columns.
+    var horizontal_position = 5 + (110 * column_number)
 
-    var $containerDiv = $("<div class='cow_target_container absolute'><span class='parachute_target'></span>" +
-        "<span class='cow_target'></span></div>")
-    $containerDiv.css('top','-177px')
-    $containerDiv.css('left', columnNumber+ 'px')
-    $(".play_area").append($containerDiv);
-    console.log('fish')
-    $containerDiv.animate({ top: '343px'}, fallTime, function () {
-    })
+    var $container_div = $("<div class='cow_target_container absolute'>" +
+        "<div class='parachute_target'></div>" +
+        "<div class='cow_target js_clickable_cow'></div>" +
+        "</div>")
+
+    $container_div.css({'top':'-177px', 'left': horizontal_position + 'px'})
+
+    $(".play_area").append($container_div);
+    $container_div.animate({ top: '343px'}, fall_time)
 }
 
-// Switch between main page to play page
+/**
+ * Switch from intro page to playing page
+ */
 function go_to_game() {
     $(".game_title").css("display", "none")
     $(".play_area").css("display","block")
-    setInterval(cowTimeRelease, 3000)
+    game_loop()
 }
-$start_button.click(go_to_game)
 
+
+/**
+ * Reduces interval for cows being created and increases speed at which they fall
+ */
+function increase_speed() {
+    if (interval_between_cows > 500 && fall_time > 1000) {
+        fall_time *= 0.9
+        interval_between_cows *= 0.9
+    }
+}
+
+$(".start_button").click(go_to_game)
