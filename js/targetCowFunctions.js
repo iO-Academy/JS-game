@@ -1,6 +1,3 @@
-
-
-
 $('body').on('click', '.js_clickable_cow', function(e) {
     save_cow(e)
 })
@@ -86,4 +83,3 @@ function rocket_cow($clicked_cow) {
             remove_cow($clicked_cow)
         })
 }
-
