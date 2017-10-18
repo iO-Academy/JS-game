@@ -20,8 +20,8 @@ function save_cow(e) {
  *increases score on screen
  */
 function increment_score() {
-    var score_element = parseInt(document.querySelector(".score_value").textContent) + 1
-    document.querySelector(".score_value").textContent = score_element
+    var score_element = parseInt($(".score_value").text()) + 1
+    $(".score_value").text(score_element)
 }
 
 /**
@@ -29,7 +29,7 @@ function increment_score() {
  */
 function lose_life() {
     var lives_element = get_lives() - 1
-    document.querySelector(".lives_value").textContent = lives_element
+    $(".lives_value").text(lives_element)
 
     if (lives_element === 0) {
         end_game()
@@ -40,7 +40,7 @@ function lose_life() {
  *get the number of current lives
  */
 function get_lives() {
-    return parseInt(document.querySelector(".lives_value").textContent)
+    return parseInt($(".lives_value").text())
 }
 
 /**
@@ -50,9 +50,9 @@ function end_game() {
     $('.cow_target_container').stop()
     $('.cow_target_container').remove()
     clearTimeout(timeout)
-    document.querySelector(".play_area").style.display = "none"
-    document.querySelector(".game_over").style.display = "block"
-    $(".score_result").text(document.querySelector(".score_value").textContent)
+    $('.play_area').css('display', 'none')
+    $('.game_over').css('display', 'block')
+    $(".score_result").text($(".score_value").text())
 }
 
 /**
