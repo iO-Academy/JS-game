@@ -31,7 +31,6 @@ function create_cow(column_number, fall_time) {
     $container_div.animate({ top: '343px'}, fall_time, dead_cow)
 
     timer = setTimeout(cow_time_release, cow_time)
-
 }
 
 /**
