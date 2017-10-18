@@ -7,10 +7,7 @@ body {
     font-family: Helvetica;
 }
 
-/*p {*/
-    /*font-weight: 700;*/
-    /*font-size: 1.5rem;*/
-/*}*/
+
 
 .absolute {
     position: absolute;
@@ -193,15 +190,19 @@ body {
     margin: 0;
     line-height: 100px;
 }
-.spikes {
+.fire, .spikes {
     position: absolute;
     z-index: 30;
     bottom: 0;
-    /*background-image: url('../img/fire.gif');*/
-    /*background-size: 70px auto;*/
-    /*background-repeat: repeat-x;*/
-    /*width: 630px;*/
-    /*height: 100px;*/
+    background-image: url('../img/fire.gif');
+    background-size: 70px auto;
+    background-repeat: repeat-x;
+    width: 630px;
+    height: 100px;
+}
+
+.spikes {
+    top: 30px;
 }
 
 .game_over {
