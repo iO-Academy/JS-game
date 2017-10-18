@@ -1,10 +1,10 @@
 PARACHUTING COWS!
+Aliens have abducted your Bovine Best Friends (BBFs) and are dropping them from spaceships at increasing speed to 'meat' their 'udder' doom on the spikes below. 
 
-Aliens have abducted your bovine best friends (BBFs) and are dropping them from their ships at increasing speed, to 'meat' their 'udder' doom on spikes below. Luckily for you, the cows have parachutes to slow their fall. Lock on to the cows and send them a jet pack to 'mooove' them safely home.
+Luckily, the cows have parachutes to slow their fall. Lock onto a cow and send them a jetpack to 'mooove' them safely home.
 
 How to play: 
-1. Press 'START' button to begin.
-2. To save a cow, click on it to activate its jet pack.
-3. Failure to save a cow results in losing a life. Fail to save 3 cows and the game is over. 
-4. To pause the game press the 'PAUSE' button located in the top right of the screen, or press the [P] key on your keyboard. To resume press the 'RESUME' button or the [R] key.
-
+1. Press START button to begin
+2. To save a cow, click on it to send it a jetpack
+3. Fail to save a cow and you'll lose a life. Fail to save 3 cows and the game is over. 
+4. To pause the game press the PAUSE button located in the top right of the screen, or press the [P] key on your keyboard. To resume press the RESUME button or the [R] key.
