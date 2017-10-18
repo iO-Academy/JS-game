@@ -2,12 +2,22 @@ var $start_button = $(".start_button");
 var fall_time = 4000
 var interval_between_cows = 3000
 
+/**
+ * iterates core functions
+ */
+
 function game_loop() {
     var column = Math.floor(Math.random() * 6)  // Random number from 0 to 5.
     increase_speed()
     create_cow(column, fall_time)
     setTimeout(game_loop, interval_between_cows)
 }
+
+/**
+ * creates new cows
+ * @param column_number number column from 0-5
+ * @param fall_time  number time it takes for cow to fall
+ */
 
 function create_cow(column_number, fall_time) {
     var horizontal_position = 5 + (110 * column_number)
@@ -24,14 +34,20 @@ function create_cow(column_number, fall_time) {
     $container_div.animate({ top: '343px'}, fall_time, function () {})
 }
 
-// Switch between main page to play page
+/**
+ * Switch from intro page to playing page
+ */
 function go_to_game() {
     $(".game_title").css("display", "none")
     $(".play_area").css("display","block")
     game_loop()
 }
 
-//Increase speed
+
+/**
+ * Reduces interval for cows being created and increases speed at which they fall
+ */
+
 function increase_speed() {
     if (interval_between_cows > 500 && fall_time > 1000) {
         fall_time *= 0.9
