@@ -92,6 +92,5 @@ function rocket_cow($clicked_cow) {
             increment_score()
             remove_cow($clicked_cow)
         })
-
 }
 
