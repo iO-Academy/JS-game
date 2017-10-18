@@ -17,7 +17,6 @@ function create_cow(column_number, fall_time) {
     $container_div.css('top','-177px')
     $container_div.css('left', horizontal_position + 'px')
     $(".play_area").append($container_div);
-    console.log('fish')
     $container_div.animate({ top: '343px'}, fall_time, function () {
     })
     setTimeout(cow_time_release, cow_time)
