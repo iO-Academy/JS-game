@@ -2,6 +2,16 @@
     box-sizing: border-box;
     color: #fff;
 }
+
+body {
+    font-family: Helvetica;
+}
+
+/*p {*/
+    /*font-weight: 700;*/
+    /*font-size: 1.5rem;*/
+/*}*/
+
 .absolute {
     position: absolute;
 }
@@ -39,19 +49,26 @@
 .game_over {
     width: 100%;
     height: 100%;
-    background-color: #00d59e;
+    background-image: url("../img/spacecow.png");
     position: absolute;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 .game_title {
     display: block;
 }
 .start_buttons {
-    margin-top: 250px;
+    display: block;
+    width: 250px;
+    position: relative;
+    left: 500px;
 }
+
 .buttons {
     display: block;
-    width: 150px;
-    margin: 15px auto;
+    /*width: 200px;*/
+    /*margin: 15px 500px;*/
     text-align: center;
     line-height: 50px;
     border: 3px solid #fff;
@@ -66,7 +83,7 @@
 }
 .game_title a:hover {
     background-color: #fff;
-    color: #00d59e;
+    color: #000000;
 }
 /*=================*/
 
@@ -97,7 +114,7 @@
 .go_to_start:hover,
 .game_over a:hover{
     background-color: #fff;
-    color: #00d59e;
+    color: #000000;
 }
 
 /*Pause page*/
@@ -178,13 +195,24 @@
 }
 .spikes {
     position: absolute;
-    z-index: 10;
+    z-index: 30;
     bottom: 0;
+    /*background-image: url('../img/fire.gif');*/
+    /*background-size: 70px auto;*/
+    /*background-repeat: repeat-x;*/
+    /*width: 630px;*/
+    /*height: 100px;*/
 }
 
 .game_over {
     display: none;
 }
-.game_over h1 {
+h1 {
     text-align: center;
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+.game_over h1 {
+    font-size: 8rem;
+    margin: 50px;
 }
