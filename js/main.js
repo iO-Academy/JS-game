@@ -6,7 +6,7 @@ var interval_between_cows = 3000
  */
 function game_loop() {
     increase_speed()
-    create_cow(column, fall_time)
+    create_cow(fall_time)
     setTimeout(game_loop, interval_between_cows)
 }
 
