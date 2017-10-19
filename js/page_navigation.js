@@ -1,5 +1,5 @@
 /**
- * hides all screen pages then displays the page specified by screen_name
+ * Hides all screen pages then displays the page specified by screen_name
  *
  * @param screen_name the selector of the screen you want to be displayed
  */
@@ -9,7 +9,7 @@ function display_screen(screen_name) {
 }
 
 /**
- * initiate_game switches from the game_title page (start) to the play_area page
+ * Switches from the game_title page (start) to the play_area page
  * It adds event listeners for the pause keypress of [P]
  */
 function initiate_game() {
@@ -27,7 +27,7 @@ function initiate_game() {
 }
 
 /**
- * pause_game switches from the play_area page to the game_pause page
+ * Switches from the play_area page to the game_pause page
  * It adds event listeners for the keypress for resume [R] and removes any other keypress listeners
  */
 function pause_game() {
@@ -50,7 +50,7 @@ function pause_game() {
 
 /**
  * resume_game switches from the game_pause page to the play_area page
- * It adds event listeners for the pause button and the keypress for resume (p) and removes any other keypress listeners
+ * It adds event listeners for the pause button and the keypress for resume [P] and removes any other keypress listeners
  */
 function resume_game() {
     display_screen('.js_play_area')
@@ -60,28 +60,15 @@ function resume_game() {
         $(this).resume()
     })
 
-
     $('body').off('keypress')
 
     $('body').on('keypress', function (e) {
         var code = e.keyCode || e.which
-        // p is keycode 112
+        // [P] is keycode 112
         if(code == 112) {
             pause_game()
         }
     })
-}
-
-function display_instructions() {
-    $(".js_instructions").css("display", "block")
-
-    $('body').off('keypress')
-
-    $('.close_instructions_button').on('click', close_instructions)
-}
-
-function close_instructions() {
-    $(".js_instructions").css("display", "none")
 }
 
 //Shows game_title page and adds initial event listener to initiate the game
@@ -90,7 +77,6 @@ display_screen('.js_game_title')
 $('.start_button').on('click', initiate_game)
 $('.pause_button').on('click', pause_game)
 $('.resume_button').on('click', resume_game)
-$('.instructions_button').on('click', display_instructions)
 
 
 
