@@ -16,11 +16,11 @@ function game_loop() {
  * @param fall_time  number time it takes for cow to fall
  */
 function create_cow(fall_time) {
-
     var column_number = Math.floor(Math.random() * 6)  // Random number from 0 to 5.
 
     // Plus 5 because cows are 10 pixels narrower than the 110 pixels wide columns.
     var horizontal_position = 5 + (110 * column_number)
+
     var $container_div = $("<div class='cow_target_container absolute'>" +
         "<div class='parachute_target'></div>" +
         "<div class='cow_target js_clickable_cow'></div>" +
@@ -35,12 +35,10 @@ function create_cow(fall_time) {
  * Switch from intro page to playing page
  */
 function go_to_game() {
-    $(".lives_value").text("5")
-    $(".score_value").text("0")
     interval_between_cows = 3000
     fall_time = 4000
-    $(".game_title").css("display", "none")
-    $(".play_area").css("display","block")
+    $(".game_title").hide()
+    $(".play_area").show()
     game_loop()
 }
 
@@ -48,10 +46,9 @@ function go_to_game() {
  * Removed cows when they hit the spikes, make them fade out and change image. Also minus a life.
  */
 function dead_cow() {
-    $('.cow_target', this).removeClass('js_clickable_cow')
+    $('.cow_target', this).removeClass('js_clickable_cow').css("background-image", "url('../JS-game/js/dead_cow.png')")
     $('.parachute_target', this).css("visibility", "hidden")
-    $('.cow_target', this).css("background-image", "url('../JS-game/js/dead_cow.png')")
-    $(this).fadeOut('slow', function () {
+    $(this).fadeOut('slow', function() {
         $(this).remove()
     })
     lose_life()
@@ -68,4 +65,3 @@ function increase_speed() {
 }
 
 $(".start_button").click(go_to_game)
-
