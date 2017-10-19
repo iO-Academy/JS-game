@@ -7,35 +7,35 @@
 </head>
 <body>
     <div class="game">
-        <div class="game_title absolute">
+        <div class="game_title absolute js_screen js_game_title">
             <div class="start_buttons">
                 <p class="buttons"><a class="start_button" href="#">START</a></p>
                 <p class="buttons"><a class="instructions_button" href="#">INSTRUCTIONS</a></p>
             </div>
         </div>
-        <div class="game_pause absolute">
+        <div class="game_pause absolute js_screen js_game_pause">
             <div class="resume_buttons">
                 <p class="buttons"><a class="resume_button" href="#">RESUME</a></p>
                 <p class="buttons"><a class="instructions_button" href="#">INSTRUCTIONS</a></p>
             </div>
         </div>
-        <div class="instructions absolute">
+        <div class="instructions absolute js_screen js_instructions">
             <div class="instructions_text">
                 <h3>PARACHUTING COWS!</h3>
 
-                <p>Aliens have abducted your bovine best friends (BBFs) and are dropping them from their ships at increasing speed, to 'meat' their 'udder' doom on spikes below. Luckily for you, the cows have parachutes to slow their fall. Lock on to the cows and send them a jet pack to 'mooove' them safely home.</p>
+                <p>Aliens have abducted your Bovine Best Friends (BBFs) and are dropping them from spaceships at increasing speed to 'meat' their 'udder' doom on the spikes below. Luckily, the cows have parachutes to slow their fall. Lock onto a cow and send them a jetpack to 'mooove' them safely home.</p>
 
                 <p>How to play:</p>
                     <ol>
-                        <li>Press 'START' button to begin.</li>
-                        <li>To save a cow, click on it to activate its jet pack.</li>
-                        <li>Failure to save a cow results in losing a life. Fail to save 3 cows and the game is over.</li>
-                        <li>To pause the game press the 'PAUSE' button located in the top right of the screen, or press the [P] key on your keyboard. To resume press the 'RESUME' button or the [R] key.</li>
+                        <li>Press START button to begin</li>
+                        <li>To save a cow, click on it to send it a jetpack</li>
+                        <li>Fail to save a cow and you'll lose a life. Fail to save 3 cows and the game is over.</li>
+                        <li>To pause the game press the PAUSE button located in the top right of the screen, or press the [P] key on your keyboard. To resume press the RESUME button or the [R] key.</li>
                     </ol>
             </div>
             <p class="buttons"><a class="close_instructions_button" href="#">CLOSE</a></p>
         </div>
-        <div class="play_area">
+        <div class="play_area js_screen js_play_area">
             <img src="img/background.png" alt="background">
             <div class="absolute top_nav">
                 <img class="ufo" src="img/ufos.png" alt="">
@@ -56,4 +56,6 @@
 </body>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="js/page_navigation.js"></script>
+<script type="text/javascript" src="js/jquery.pause.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
