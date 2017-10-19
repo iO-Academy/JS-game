@@ -51,11 +51,12 @@ body {
 .game_title {
     display: block;
 }
-.start_buttons {
+.start_buttons_container {
     display: block;
-    width: 250px;
+    /*width: 250px;*/
+    width: 300px;
     position: relative;
-    left: 500px;
+    left: 450px;
 }
 
 .buttons {
@@ -197,7 +198,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-.game_over h1 {
+.score_result {
+    text-align: center;
     font-size: 8rem;
-    margin: 50px;
 }

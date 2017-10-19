@@ -8,6 +8,13 @@ function save_cow(e) {
     var $cow_container = $clicked_cow.parent()
     $clicked_cow.removeClass('js_clickable_cow')
     rocket_cow($cow_container)
+    increase_interval_between_cows()
+}
+
+function increase_interval_between_cows() {
+    if((parseInt($(".score_value").text()) % 5) == 0) {
+        interval_between_cows *= 0.8
+    }
 }
 
 /**
