@@ -4,8 +4,8 @@
  * @param screen_name the selector of the screen you want to be displayed
  */
 function display_screen(screen_name) {
-    $('.js_screen').css("display", "none")
-    $(screen_name).css("display", "block")
+    $('.js_screen').hide()
+    $(screen_name).show()
 }
 
 /**
@@ -17,7 +17,7 @@ function initiate_game() {
 
     $('body').off('keypress')
 
-    $('body').on('keypress', function (e) {
+    $('body').on('keypress', function(e) {
         var code = e.keyCode || e.which
         // [P] is keycode 112
         if(code == 112) {
@@ -35,7 +35,7 @@ function pause_game() {
 
     $('body').off('keypress')
 
-    $('body').on('keypress', function (e) {
+    $('body').on('keypress', function(e) {
         var code = e.keyCode || e.which
         // [R] is keycode 114
         if(code == 114) {
@@ -43,7 +43,7 @@ function pause_game() {
         }
     })
     clearTimeout(timeout_id)
-    $('.cow_target_container').each(function (){
+    $('.cow_target_container').each(function() {
         $(this).pause()
     })
 }
@@ -56,13 +56,13 @@ function resume_game() {
     display_screen('.js_play_area')
 
     cow_time_release ()
-    $('.cow_target_container').each(function (){
+    $('.cow_target_container').each(function() {
         $(this).resume()
     })
 
     $('body').off('keypress')
 
-    $('body').on('keypress', function (e) {
+    $('body').on('keypress', function(e) {
         var code = e.keyCode || e.which
         // [P] is keycode 112
         if(code == 112) {
