@@ -1,5 +1,6 @@
 var fall_time = 4000
 var interval_between_cows = 3000
+var timeout_id
 
 /**
  * iterates core functions
@@ -7,7 +8,7 @@ var interval_between_cows = 3000
 function game_loop() {
     increase_speed()
     create_cow(fall_time)
-    setTimeout(game_loop, interval_between_cows)
+    timeout_id = setTimeout(game_loop, interval_between_cows)
 }
 
 /**
