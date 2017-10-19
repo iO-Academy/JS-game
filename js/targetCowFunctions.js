@@ -15,7 +15,15 @@ function save_cow(e) {
  */
 function increment_score() {
     var score_element = parseInt($(".score_value").text()) + 1
-    $(".score_value").text(score_element)
+    $(".score_value").text("00" + score_element)
+    if (score_element > 9) {
+        $(".score_value").text("0" + score_element)
+    }
+    if (score_element > 99) {
+        if (score_element > 9) {
+            $(".score_value").text(score_element)
+        }
+    }
 }
 
 /**

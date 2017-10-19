@@ -233,7 +233,7 @@ a {
 }
 .score p {
     position: absolute;
-    right: 50px;
+    right: 25px;
     top: -60px;
     margin: 0;
     font-size: 3.5rem;
@@ -253,7 +253,7 @@ a {
     background-repeat: repeat-x;
 }
 .spikes {
-    top: 30px;
+    top: 60px;
 }
 .game_over {
     display: none;
