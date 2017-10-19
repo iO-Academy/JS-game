@@ -69,11 +69,9 @@ function rocket_cow($cow_container) {
         "background-image": "url('../JS-game/img/rocket_cow.png')",
         "height": "140px"
     })
-    $cow_container.css("z-index", "4")
     $('.parachute_target', $cow_container).css("visibility", "hidden")
 
-    $cow_container.stop()
-    $cow_container.animate({
+    $cow_container.css("z-index", "4").stop().animate({
             top: 400,
             left: 700
         }, 750,
