@@ -30,7 +30,7 @@ function create_cow(fall_time) {
     $container_div.css({'top':'-177px', 'left': horizontal_position + 'px'})
 
     $(".play_area").append($container_div);
-    $container_div.animate({ top: '343px'}, fall_time, dead_cow)
+    $container_div.animate({ top: '343px'}, fall_time, function(){dead_cow($container_div)})
 }
 
 /**
@@ -52,11 +52,11 @@ function go_to_game() {
 /**
  * Removed cows when they hit the spikes, make them fade out and change image. Also minus a life.
  */
-function dead_cow() {
-    $('.cow_target', this).removeClass('js_clickable_cow')
-    $('.parachute_target', this).css("visibility", "hidden")
-    $('.cow_target', this).css("background-image", "url('../JS-game/js/dead_cow.png')")
-    $(this).fadeOut('slow', function () {
+function dead_cow($cow) {
+    $('.cow_target', $cow).removeClass('js_clickable_cow')
+    $('.parachute_target', $cow).css("visibility", "hidden")
+    $('.cow_target', $cow).css("background-image", "url('../JS-game/js/dead_cow.png')")
+    $cow.fadeOut('slow', function () {
         $(this).remove()
     })
     lose_life()
