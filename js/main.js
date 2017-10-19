@@ -40,8 +40,6 @@ function go_to_game() {
     $(".score_value").text(0)
     $(".lives_value").text(5)
 
-    $(".game_title").hide()
-    $(".play_area").show()
     game_loop()
 }
 
@@ -66,4 +64,4 @@ function increase_speed() {
     }
 }
 
-$(".start_button").click(go_to_game)
+

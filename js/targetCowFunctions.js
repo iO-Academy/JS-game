@@ -32,7 +32,7 @@ function lose_life() {
     var remaining_lives = parseInt($(".lives_value").text()) - 1
     $(".lives_value").text(remaining_lives)
 
-    if (remaining_lives === 0) {
+    if (remaining_lives < 1) {
         end_game()
     }
 }
@@ -43,8 +43,7 @@ function lose_life() {
 function end_game() {
     $('.cow_target_container').stop().remove()
     clearTimeout(timeout)
-    $('.play_area').hide()
-    $('.game_over').show()
+    display_screen('.js_game_over')
     $(".score_result").text($(".score_value").text())
 }
 
