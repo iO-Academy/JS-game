@@ -229,11 +229,14 @@ a {
     position: absolute;
     z-index: 30;
     bottom: 0;
+    width: 630px;
+    height: 100px;
+}
+
+.fire {
     background-image: url('../img/fire.gif');
     background-size: 70px auto;
     background-repeat: repeat-x;
-    width: 630px;
-    height: 100px;
 }
 
 .spikes {
@@ -243,11 +246,13 @@ a {
 .game_over {
     display: none;
 }
+
 h1 {
     text-align: center;
     font-size: 5rem;
     margin-bottom: 10px;
 }
+
 .game_over h1 {
     font-size: 8rem;
     margin: 50px;

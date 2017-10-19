@@ -1,15 +1,12 @@
-$('body').on('click', '.js_clickable_cow', function(e) {
-    save_cow(e)
-})
+$('body').on('click', '.js_clickable_cow', save_cow)
 
 /**
  * when the cow is clicked, remove the class js_clickable_cow, add class rocket_cow and execute rocket cow function
  */
 function save_cow(e) {
-    var clicked_cow = e.target
-    var $cow_container = $(clicked_cow).parent()
-    $(clicked_cow).removeClass('js_clickable_cow')
-    $cow_container.addClass('rocket_cow')
+    var $clicked_cow = $(e.target)
+    var $cow_container = $clicked_cow.parent()
+    $clicked_cow.removeClass('js_clickable_cow')
     rocket_cow($cow_container)
 }
 
@@ -25,27 +22,19 @@ function increment_score() {
  *changes value of lives on screen, when lives is equal to zero end game
  */
 function lose_life() {
-    var lives_element = get_lives() - 1
-    $(".lives_value").text(lives_element)
+    var remaining_lives = parseInt($(".lives_value").text()) - 1
+    $(".lives_value").text(remaining_lives)
 
-    if (lives_element === 0) {
+    if (remaining_lives === 0) {
         end_game()
     }
-}
-
-/**
- *get the number of current lives
- */
-function get_lives() {
-    return parseInt($(".lives_value").text())
 }
 
 /**
  *stops the animation, removes the cows from dom and displays game over scene
  */
 function end_game() {
-    $('.cow_target_container').stop()
-    $('.cow_target_container').remove()
+    $('.cow_target_container').stop().remove()
     clearTimeout(timeout)
     display_screen(".js_game_over")
     $('body').off('keypress')
@@ -57,7 +46,7 @@ function end_game() {
  */
 function remove_cow(cow) {
     setTimeout(function() {
-        $(cow).fadeOut('slow', function () {
+        $(cow).fadeOut('slow', function() {
             $(this).remove()
         })
     }, 200);
@@ -67,19 +56,22 @@ function remove_cow(cow) {
  *change image to rocket cow, hide the parachute and animate it to bottom right corner
  * increment score and then remove cow from dom
  */
-function rocket_cow($clicked_cow) {
-    $('.cow_target', $clicked_cow).css('background-image',"url('../JS-game/js/rocket_cow.png')")
-    $('.cow_target', $clicked_cow).css("height", "140px")
-    $clicked_cow.css("z-index", "4")
-    $('.parachute_target', $clicked_cow).css("visibility", "hidden")
+function rocket_cow($cow_container) {
+    $cow_container.addClass('rocket_cow')
+    $('.cow_target', $cow_container).css({
+        "background-image": "url('../JS-game/js/rocket_cow.png')",
+        "height": "140px"
+    })
+    $cow_container.css("z-index", "4")
+    $('.parachute_target', $cow_container).css("visibility", "hidden")
 
-    $clicked_cow.stop()
-    $clicked_cow.animate({
+    $cow_container.stop()
+    $cow_container.animate({
             top: 400,
             left: 700
         }, 750,
-        function () {
+        function() {
             increment_score()
-            remove_cow($clicked_cow)
+            remove_cow($cow_container)
         })
 }
