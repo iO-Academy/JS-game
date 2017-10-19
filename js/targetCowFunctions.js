@@ -85,22 +85,24 @@ function rocket_cow($clicked_cow) {
 }
 
 
-/**
- * False target functions: hide clicked parachute and drop cow at speed.
- */
-/
-
 
 $('body').on('click', '.parachute_target', function(e) {
     remove_parachute(e)
 })
-
-
+/**
+ * False target functions: hide clicked parachute and drop cow at speed and call dead cow and remove cow functions.
+ * @param e event-object targets the clicked parachute
+ */
 function remove_parachute(e) {
     var clicked_parachute = e.target
-    $(clicked_parachute, this).css("visibility", "hidden")
-
-    $e.parent.stop()
-
+    $(clicked_parachute).css("visibility", "hidden")
+    var $cow_container = $(clicked_parachute).parent()
+    $cow_container.stop()
+    $cow_container.animate({
+            top: 400,
+        }, 200,
+        function () {
+        dead_cow($cow_container)
+        remove_cow($cow_container)
+    })
 }
-
