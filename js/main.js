@@ -48,7 +48,7 @@ function go_to_game() {
  * Removed cows when they hit the spikes, make them fade out and change image. Also minus a life.
  */
 function dead_cow() {
-    $('.cow_target', this).removeClass('js_clickable_cow').css("background-image", "url('../JS-game/js/dead_cow.png')")
+    $('.cow_target', this).removeClass('js_clickable_cow').css("background-image", "url('../JS-game/img/dead_cow.png')")
     $('.parachute_target', this).css("visibility", "hidden")
     $(this).fadeOut('slow', function() {
         $(this).remove()
