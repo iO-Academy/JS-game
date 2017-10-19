@@ -66,7 +66,7 @@ function remove_cow(cow) {
 function rocket_cow($cow_container) {
     $cow_container.addClass('rocket_cow')
     $('.cow_target', $cow_container).css({
-        "background-image": "url('../JS-game/js/rocket_cow.png')",
+        "background-image": "url('../JS-game/img/rocket_cow.png')",
         "height": "140px"
     })
     $cow_container.css("z-index", "4")
