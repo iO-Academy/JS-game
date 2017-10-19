@@ -68,7 +68,6 @@ a {
     text-transform: uppercase;
     transition: .3s;
 }
-
 .go_to_start:hover,
 .game_title a:hover,
 .game_pause a:hover {
@@ -112,7 +111,6 @@ a {
     font-size: 20px;
     font-weight: bold;
 }
-
 .instructions_text {
     width: 700px;
     height: 500px;
@@ -162,7 +160,6 @@ a {
     height: 60px;
     top: 0;
 }
-
 .ufo {
     position: absolute;
     z-index: 10;
@@ -185,14 +182,12 @@ a {
     height: 500px;
     top: 75px;
 }
-
 .play_area {
     width: 100%;
     height: 100%;
     display: none;
     overflow: hidden;
 }
-
 .statistic {
     width: 140px;
     top: 0;
@@ -202,7 +197,6 @@ a {
     padding: 0 15px;
     z-index: 15;
 }
-
 .statistic p {
     display: inline-block;
     margin: 0;
@@ -210,17 +204,14 @@ a {
     font-size: 0.8rem;
     color: #fff;
 }
-
 .pause_button {
     text-decoration: none;
     transition: .3s;
     color: #f00;
 }
-
 .pause_button:hover {
     color: #ff8978;
 }
-
 .barn{
     position: absolute;
     bottom: -5px;
@@ -228,20 +219,17 @@ a {
     width: 230px;
     z-index: 15;
 }
-
 .bottom {
     width: 100%;
     height: 100px;
     bottom: 0;
 }
-
 .score {
     width: 140px;
     height: 100px;
     right: 0;
     z-index: 20;
 }
-
 .score p {
     position: absolute;
     right: 50px;
@@ -250,7 +238,6 @@ a {
     font-size: 3rem;
     line-height: 100px;
 }
-
 .fire, .spikes {
     position: absolute;
     z-index: 30;
@@ -258,27 +245,22 @@ a {
     width: 630px;
     height: 100px;
 }
-
 .fire {
     background-image: url('../img/fire.gif');
     background-size: 70px auto;
     background-repeat: repeat-x;
 }
-
 .spikes {
     top: 30px;
 }
-
 .game_over {
     display: none;
 }
-
 h1 {
     text-align: center;
     font-size: 5rem;
     margin-bottom: 10px;
 }
-
 .game_over h1 {
     font-size: 8rem;
     margin: 50px;
