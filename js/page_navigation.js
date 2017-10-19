@@ -42,7 +42,7 @@ function pause_game() {
             resume_game()
         }
     })
-    clearTimeout(timeout_id)
+    clearTimeout(timeout)
     $('.cow_target_container').each(function() {
         $(this).pause()
     })
@@ -55,7 +55,7 @@ function pause_game() {
 function resume_game() {
     display_screen('.js_play_area')
 
-    cow_time_release ()
+    game_loop()
     $('.cow_target_container').each(function() {
         $(this).resume()
     })
@@ -77,7 +77,6 @@ function resume_game() {
 function display_instructions() {
     $(".game_instruction").css("display", "block")
     $('body').off('keypress')
-
     $('.close_instructions_button').on('click', close_instructions)
 }
 

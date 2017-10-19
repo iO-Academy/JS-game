@@ -12,7 +12,7 @@
     <div class="game">
         <div class="game_title absolute js_screen js_game_title">
             <div class="start_buttons">
-                <h1>PARACHUTING COWS</h1>
+                <h1>PARACHUTING<br>COWS</h1>
                 <p class="buttons"><a class="start_button" href="#">Start</a></p>
                 <p class="buttons"><a class="instructions_button" href="#">Instructions</a></p>
             </div>
@@ -20,6 +20,13 @@
         <div class="game_pause absolute js_screen js_game_pause">
             <div class="resume_buttons">
                 <p class="buttons"><a class="resume_button" href="#">RESUME</a></p>
+                <p class="buttons"><a class="instructions_button" href="#">INSTRUCTIONS</a></p>
+            </div>
+        </div>
+        <div class="game_over absolute js_screen js_game_over">
+            <div class="start_buttons">
+                <h1><span class="score_result"></span></h1>
+                <p class="buttons"><a class="start_button" href="#">Start again</a></p>
                 <p class="buttons"><a class="instructions_button" href="#">INSTRUCTIONS</a></p>
             </div>
         </div>
@@ -52,13 +59,15 @@
                         </li>
                     </ol>
                     <h6>Vector Illustration by <a href="https://www.vecteezy.com/">Vecteezy!</a></h6>
+                    <h6><a href="http://www.fg-a.com">Free Animations - Clipart - Animated Gifs</a></h6>
                 </div>
             </div>
         </div>
         <div class="play_area js_screen js_play_area">
             <img src="img/night-sky-web.png" alt="background">
             <div class="absolute top_nav">
-                <img class="ufo" src="img/ufos-night.png" alt="">
+                <div class="ufo"></div>
+                <div class="ufo_beam"></div>
                 <div class="absolute statistic">
                     <p class="lives">Lives: <span class="lives_value">5</span></p>
                     <p class="pause"><a class="pause_button" href="#">Pause</a></p>
@@ -69,17 +78,11 @@
                 <img class="spikes" src="img/spikes.png" alt="spikes">
                 <img class="barn" src="img/barn.png" alt="barn">
                 <div class="absolute score">
-                    <p>Score: <span class="score_value">0</span></p>
+                    <p><span class="score_value">0</span></p>
                 </div>
             </div>
         </div>
-        <div class="game_over absolute js_screen js_game_over">
-            <div class="start_buttons">
-                <h1><span class="score_result"></span></h1>
-                <p class="buttons"><a class="start_button" href="#">Start again</a></p>
-                <p class="buttons"><a class="instruction_button" href="#">Instructions</a></p>
-            </div>
-        </div>
+
     </div>
 </body>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
