@@ -26,9 +26,9 @@ function create_cow(fall_time) {
         "<div class='cow_target js_clickable_cow'></div>" +
         "</div>")
 
-    $container_div.css({'top':'-177px', 'left': horizontal_position + 'px'})
+    $container_div.css({'top': '-177px', 'left': horizontal_position + 'px'})
     $(".play_area").append($container_div);
-    $container_div.animate({ top: '343px'}, fall_time, dead_cow)
+    $container_div.animate({top: '343px'}, fall_time, dead_cow)
 }
 
 /**
@@ -39,8 +39,6 @@ function go_to_game() {
     $(".score_value").text("000")
     interval_between_cows = 2000
     fall_time = 3000
-    // $(".game_title").hide()
-    // $(".play_area").show()
     game_loop()
 }
 
@@ -50,7 +48,7 @@ function go_to_game() {
 function dead_cow() {
     $('.cow_target', this).removeClass('js_clickable_cow').css("background-image", "url('../JS-game/img/dead_cow.png')")
     $('.parachute_target', this).css("visibility", "hidden")
-    $(this).fadeOut('slow', function() {
+    $(this).fadeOut('slow', function () {
         $(this).remove()
     })
     lose_life()

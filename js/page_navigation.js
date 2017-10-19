@@ -13,9 +13,9 @@ function display_screen(screen_name) {
  */
 function activate_play_area() {
     display_screen('.js_play_area')
-    $('body').off('keypress').on('keypress', function(e) {
+    $('body').off('keypress').on('keypress', function (e) {
         // [P] is keycode 112
-        if((e.keyCode || e.which) == 112) {
+        if ((e.keyCode || e.which) == 112) {
             pause_game()
         }
     })
@@ -36,14 +36,14 @@ function initiate_game() {
 function pause_game() {
     display_screen('.js_game_pause')
 
-    $('body').off('keypress').on('keypress', function(e) {
+    $('body').off('keypress').on('keypress', function (e) {
         // [R] is keycode 114
-        if((e.keyCode || e.whichcode) == 114) {
+        if ((e.keyCode || e.whichcode) == 114) {
             resume_game()
         }
     })
     clearTimeout(timeout)
-    $('.cow_target_container').each(function() {
+    $('.cow_target_container').each(function () {
         $(this).pause()
     })
 }
@@ -54,7 +54,7 @@ function pause_game() {
 function resume_game() {
     activate_play_area()
     game_loop()
-    $('.cow_target_container').each(function() {
+    $('.cow_target_container').each(function () {
         $(this).resume()
     })
 }

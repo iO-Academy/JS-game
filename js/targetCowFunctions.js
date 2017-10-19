@@ -12,7 +12,7 @@ function save_cow(e) {
 }
 
 function increase_interval_between_cows() {
-    if((parseInt($(".score_value").text()) % 5) == 0) {
+    if ((parseInt($(".score_value").text()) % 5) == 0) {
         interval_between_cows *= 0.8
     }
 }
@@ -38,8 +38,8 @@ function increment_score() {
  */
 function lose_life() {
     var remaining_lives = parseInt($(".lives_value").text()) - 1
-    $(".lives_value").text(remaining_lives)
 
+    $(".lives_value").text(remaining_lives)
     if (remaining_lives < 1) {
         end_game()
     }
@@ -60,8 +60,8 @@ function end_game() {
  *function to fade out and remove cow from dom
  */
 function remove_cow(cow) {
-    setTimeout(function() {
-        $(cow).fadeOut('slow', function() {
+    setTimeout(function () {
+        $(cow).fadeOut('slow', function () {
             $(this).remove()
         })
     }, 200);
@@ -83,7 +83,7 @@ function rocket_cow($cow_container) {
             top: 400,
             left: 700
         }, 750,
-        function() {
+        function () {
             increment_score()
             remove_cow($cow_container)
         })
