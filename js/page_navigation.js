@@ -14,6 +14,7 @@ function display_screen(screen_name) {
  */
 function initiate_game() {
     display_screen('.js_play_area')
+    go_to_game()
 
     $('body').off('keypress')
 
@@ -42,7 +43,7 @@ function pause_game() {
             resume_game()
         }
     })
-    clearTimeout(timeout_id)
+    clearTimeout(timeout)
     $('.cow_target_container').each(function() {
         $(this).pause()
     })

@@ -43,8 +43,7 @@ function lose_life() {
 function end_game() {
     $('.cow_target_container').stop().remove()
     clearTimeout(timeout)
-    $('.play_area').hide()
-    $('.game_over').show()
+    display_screen('.js_game_over')
     $(".score_result").text($(".score_value").text())
 }
 
