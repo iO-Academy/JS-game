@@ -1,5 +1,5 @@
-var fall_time = 4000
-var interval_between_cows = 3000
+var fall_time
+var interval_between_cows
 var timeout
 
 /**
@@ -37,10 +37,10 @@ function create_cow(fall_time) {
 function go_to_game() {
     $(".lives_value").text("5")
     $(".score_value").text("000")
-    interval_between_cows = 3000
-    fall_time = 4000
-    $(".game_title").hide()
-    $(".play_area").show()
+    interval_between_cows = 2000
+    fall_time = 3000
+    // $(".game_title").hide()
+    // $(".play_area").show()
     game_loop()
 }
 
@@ -60,10 +60,9 @@ function dead_cow() {
  * Reduces interval for cows being created and increases speed at which they fall
  */
 function increase_speed() {
-    if (interval_between_cows > 500 && fall_time > 1000) {
-        fall_time *= 0.9
-        interval_between_cows *= 0.9
+    if (fall_time > 2500) {
+        fall_time *= 0.99
     }
 }
 
-$(".start_button").click(go_to_game)
+

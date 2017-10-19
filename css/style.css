@@ -1,27 +1,33 @@
 * {
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
 }
+
 body {
     font-family: 'silkscreennormal';
     font-size: 14px;
     font-size: 1.4rem;
 }
+
 @font-face {
     font-family: 'silkscreennormal';
     src: url('slkscr-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 a {
     color: #fff;
     font-weight: bold;
 }
+
 .absolute {
     position: absolute;
 }
+
 .game {
     width: 800px;
     height: 600px;
@@ -29,17 +35,20 @@ a {
     position: relative;
     overflow: hidden;
 }
+
 .start_buttons h1 {
     color: #fff;
     font-size: 6rem;
     text-align: right;
     padding: 0 50px;
 }
+
 .cow_target_container {
     width: 100px;
     height: 100px;
     z-index: 5;
 }
+
 .cow_target{
     height: 114px;
     width: 100px;
@@ -47,11 +56,13 @@ a {
     background-repeat: no-repeat;
     z-index: 10;
 }
+
 .parachute_target{
     height: 78px;
     width: 100px;
     background-image: url("../img/parachute-100px.png");
 }
+
 .game_title,
 .game_instructions,
 .game_pause,
@@ -63,9 +74,14 @@ a {
     font-weight: 700;
     font-size: 1.5rem;
 }
-.go_to_start,
+
+.resume_buttons_container{
+    margin-top: 250px;
+}
+
 .game_pause a,
-.game_over a {
+.game_over a,
+.game_title {
     display: block;
     width: 100%;
     height: 100%;
@@ -73,11 +89,13 @@ a {
     text-transform: uppercase;
     transition: .3s;
 }
+
 .buttons:hover,
-.buttons a:hover{
+.buttons a:hover {
     background-color: #fff;
     color: #f00;
 }
+
 .buttons {
     display: block;
     width: 250px;
@@ -91,10 +109,12 @@ a {
     font-size: 2.5rem;
     left: 500px;
 }
+
 .game_title a,
 .game_pause a,
 .instructions p a,
-.play_area a {
+.play_area a,
+.game_over a {
     display: block;
     width: 100%;
     height: 100%;
@@ -105,9 +125,10 @@ a {
 /*=================*/
 
 /*Instruction page*/
-.game_instructionss {
+.game_instructions {
     display: none;
 }
+
 .instructions_text {
     width: 700px;
     height: 500px;
@@ -119,20 +140,24 @@ a {
     line-height: 1.6rem;
     overflow: scroll;
 }
+
 .instructions_text h1 {
     margin: 35px 0;
 }
+
 .instructions_text .buttons {
     margin: 0 auto;
     left: auto;
     border: 3px solid rgba(255, 0, 0, 0.9);
     background-color: transparent;
 }
+
 .instructions_title {
     color: #f00;
     text-align: center;
     font-size: 4rem;
 }
+
 .instructions_item {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.7rem;
@@ -141,13 +166,16 @@ a {
     text-indent: 20px;
     font-weight: bold;
 }
+
 .instructions a {
     color: #f00;
 }
+
 .instructions a:hover{
     background-color: rgba(255, 0, 0, 0.9);
     color: #fff;
 }
+
 .instructions h5 {
     text-align: center;
 }
@@ -158,6 +186,7 @@ a {
     height: 60px;
     top: 0;
 }
+
 .ufo {
     position: absolute;
     z-index: 10;
@@ -168,6 +197,7 @@ a {
     background-image: url('../img/ufo.gif');
     top: 0;
 }
+
 .ufo_beam {
     display: block;
     position: absolute;
@@ -179,12 +209,14 @@ a {
     height: 500px;
     top: 75px;
 }
+
 .play_area {
     width: 100%;
     height: 100%;
     display: none;
     overflow: hidden;
 }
+
 .statistic {
     width: 140px;
     top: 0;
@@ -194,6 +226,7 @@ a {
     padding: 0 15px;
     z-index: 15;
 }
+
 .statistic p {
     display: inline-block;
     margin: 0;
@@ -201,11 +234,13 @@ a {
     font-size: 1.2rem;
     color: #fff;
 }
+
 .pause_button {
     text-decoration: none;
     transition: .3s;
     color: #f00;
 }
+
 .pause_button:hover {
     color: #ff8978;
 }
@@ -213,6 +248,7 @@ a {
     position: absolute;
     top: 100px;
 }
+
 .barn{
     position: absolute;
     bottom: -10px;
@@ -220,17 +256,22 @@ a {
     width: 230px;
     z-index: 15;
 }
+
+/*Bottom*/
+
 .bottom {
     width: 100%;
     height: 100px;
     bottom: 0;
 }
+
 .score {
     width: 140px;
     height: 100px;
     right: 0;
     z-index: 20;
 }
+
 .score p {
     position: absolute;
     right: 25px;
@@ -239,6 +280,7 @@ a {
     font-size: 3.5rem;
     line-height: 100px;
 }
+
 .fire,
 .spikes {
     position: absolute;
@@ -247,18 +289,21 @@ a {
     width: 630px;
     height: 100px;
 }
+
 .fire {
     background-image: url('../img/fire.gif');
     background-size: 70px auto;
     background-repeat: repeat-x;
 }
+
 .spikes {
     top: 60px;
 }
+
 .game_over {
     display: none;
 }
+
 .game_over h1 {
     font-size: 8rem;
-    margin: 50px;
 }
