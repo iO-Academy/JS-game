@@ -2,36 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Cow heroes</title>
 </head>
 <body>
     <div class="game">
         <div class="game_title absolute">
-            <div class="start_buttons">
+            <div class="start_buttons_container">
+                <h1>GAME<br>TITLE</h1>
                 <p class="buttons"><a class="start_button" href="#">Start</a></p>
-                <p class="buttons"><a class="instruction_button" href="#">Instruction</a></p>
+                <p class="buttons"><a class="instruction_button" href="#">Instructions</a></p>
             </div>
         </div>
         <div class="play_area">
-            <img src="img/background.png" alt="background">
+            <img src="img/night-sky-web.png" alt="background">
             <div class="absolute top_nav">
-                <img class="ufo" src="img/ufos.png" alt="">
+                <img class="ufo" src="img/ufos-night.png" alt="">
                 <div class="absolute statistic">
                     <p class="lives">Lives: <span class="lives_value">5</span></p>
                     <p class="pause"><a class="pause_button" href="#">Pause</a></p>
                 </div>
             </div>
             <div class="absolute bottom">
+                <div class="fire"></div>
                 <img class="spikes" src="img/spikes.png" alt="spikes">
                 <img class="barn" src="img/barn.png" alt="barn">
                 <div class="absolute score">
-                    <p>Score: <span class="score_value">10</span></p>
+                    <p>Score: <span class="score_value">0</span></p>
                 </div>
+            </div>
+        </div>
+        <div class="game_over absolute">
+            <div class="start_buttons_container">
+                <h1 class="score_result"></h1>
+                <p class="buttons"><a class="start_button" href="#">Start again</a></p>
+                <p class="buttons"><a class="instruction_button" href="#">Instructions</a></p>
             </div>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/targetCowFunctions.js"></script>
 </html>
