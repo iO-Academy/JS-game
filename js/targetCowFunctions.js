@@ -32,7 +32,7 @@ function lose_life() {
     var remaining_lives = parseInt($(".lives_value").text()) - 1
     $(".lives_value").text(remaining_lives)
 
-    if (remaining_lives === 0) {
+    if (remaining_lives < 1) {
         end_game()
     }
 }

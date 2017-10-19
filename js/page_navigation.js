@@ -9,22 +9,24 @@ function display_screen(screen_name) {
 }
 
 /**
- * Switches from the game_title page (start) to the play_area page
- * It adds event listeners for the pause keypress of [P]
+ * Switches to the game_play page and adds an event listener for the pause keypress of [P]
  */
-function initiate_game() {
+function activate_play_area() {
     display_screen('.js_play_area')
-    go_to_game()
-
-    $('body').off('keypress')
-
-    $('body').on('keypress', function(e) {
-        var code = e.keyCode || e.which
+    $('body').off('keypress').on('keypress', function(e) {
         // [P] is keycode 112
-        if(code == 112) {
+        if((e.keyCode || e.which) == 112) {
             pause_game()
         }
     })
+}
+
+/**
+ * Begins the game
+ */
+function initiate_game() {
+    activate_play_area()
+    go_to_game()
 }
 
 /**
@@ -34,12 +36,9 @@ function initiate_game() {
 function pause_game() {
     display_screen('.js_game_pause')
 
-    $('body').off('keypress')
-
-    $('body').on('keypress', function(e) {
-        var code = e.keyCode || e.which
+    $('body').off('keypress').on('keypress', function(e) {
         // [R] is keycode 114
-        if(code == 114) {
+        if((e.keyCode || e.whichcode) == 114) {
             resume_game()
         }
     })
@@ -50,25 +49,13 @@ function pause_game() {
 }
 
 /**
- * resume_game switches from the game_pause page to the play_area page
- * It adds event listeners for the pause button and the keypress for resume [P] and removes any other keypress listeners
+ * Resumes the game play from the point it was left before pausing (with the addition of a cow)
  */
 function resume_game() {
-    display_screen('.js_play_area')
-
+    activate_play_area()
     game_loop()
     $('.cow_target_container').each(function() {
         $(this).resume()
-    })
-
-    $('body').off('keypress')
-
-    $('body').on('keypress', function(e) {
-        var code = e.keyCode || e.which
-        // [P] is keycode 112
-        if(code == 112) {
-            pause_game()
-        }
     })
 }
 

@@ -63,7 +63,7 @@ body {
 }
 
 .start_buttons_container,
-.resume_buttons_container{
+.resume_buttons_container {
     display: block;
     width: 300px;
     position: relative;
@@ -81,7 +81,6 @@ body {
 .game_pause a,
 .play_area a,
 .game_over a {
-    /*display: block;*/
     width: 100%;
     height: 100%;
     text-decoration: none;
