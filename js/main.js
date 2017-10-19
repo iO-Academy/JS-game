@@ -1,5 +1,6 @@
 var fall_time = 4000
 var interval_between_cows = 3000
+var timeout
 
 /**
  * iterates core functions
@@ -7,12 +8,11 @@ var interval_between_cows = 3000
 function game_loop() {
     increase_speed()
     create_cow(fall_time)
-    setTimeout(game_loop, interval_between_cows)
+    timeout = setTimeout(game_loop, interval_between_cows)
 }
 
 /**
  * creates new cows
- *
  * @param fall_time  number time it takes for cow to fall
  */
 function create_cow(fall_time) {
@@ -27,20 +27,32 @@ function create_cow(fall_time) {
         "</div>")
 
     $container_div.css({'top':'-177px', 'left': horizontal_position + 'px'})
-
     $(".play_area").append($container_div);
-    $container_div.animate({ top: '343px'}, fall_time)
+    $container_div.animate({ top: '343px'}, fall_time, dead_cow)
 }
 
 /**
  * Switch from intro page to playing page
  */
 function go_to_game() {
-    $(".game_title").css("display", "none")
-    $(".play_area").css("display","block")
+    interval_between_cows = 3000
+    fall_time = 4000
+    $(".game_title").hide()
+    $(".play_area").show()
     game_loop()
 }
 
+/**
+ * Removed cows when they hit the spikes, make them fade out and change image. Also minus a life.
+ */
+function dead_cow() {
+    $('.cow_target', this).removeClass('js_clickable_cow').css("background-image", "url('../JS-game/js/dead_cow.png')")
+    $('.parachute_target', this).css("visibility", "hidden")
+    $(this).fadeOut('slow', function() {
+        $(this).remove()
+    })
+    lose_life()
+}
 
 /**
  * Reduces interval for cows being created and increases speed at which they fall
