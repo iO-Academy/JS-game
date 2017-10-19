@@ -75,7 +75,6 @@ a {
     color: #f00;
 }
 .buttons {
-
     display: block;
     width: 250px;
     position: relative;
@@ -102,7 +101,6 @@ a {
 /*=================*/
 
 /*Instruction page*/
-
 .game_instruction {
     display: none;
 }
