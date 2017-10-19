@@ -3,6 +3,10 @@
     color: #fff;
 }
 
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .absolute {
     position: absolute;
 }
@@ -26,6 +30,7 @@
     height: 114px;
     width: 100px;
     background-image: url("../img/cow-100px.png");
+    background-repeat: no-repeat;
     z-index: 10;
 }
 .parachute_target{
@@ -35,31 +40,47 @@
 }
 /*Game main page*/
 .game_title,
-.game_pause {
+.game_instruction,
+.game_pause,
+.game_over {
     width: 100%;
     height: 100%;
-    background-color: #00d59e;
+    background-image: url("../img/spacecow.png");
     position: absolute;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
-.start_buttons,
-.resume_buttons {
+.resume_buttons_container{
     margin-top: 250px;
+}
+
+.game_title {
+    display: block;
+}
+
+.start_buttons_container,
+.resume_buttons_container{
+    display: block;
+    width: 300px;
+    position: relative;
+    left: 450px;
 }
 
 .buttons {
     display: block;
-    width: 150px;
-    margin: 15px auto;
     text-align: center;
     line-height: 50px;
     border: 3px solid #fff;
 }
 
+.go_to_start,
 .game_title a,
 .game_pause a,
-.play_area a {
-    display: block;
+.play_area a,
+.game_over a {
+    /*display: block;*/
     width: 100%;
     height: 100%;
     text-decoration: none;
@@ -68,9 +89,11 @@
 }
 
 .game_title a:hover,
+.go_to_start:hover,
+.game_over a:hover,
 .game_pause a:hover {
     background-color: #fff;
-    color: #00d59e;
+    color: #000000;
 }
 
 /*Game play page (play area)*/
@@ -138,8 +161,36 @@
     margin: 0;
     line-height: 100px;
 }
-.spikes {
+
+.fire, .spikes {
     position: absolute;
-    z-index: 10;
+    z-index: 30;
     bottom: 0;
+    width: 630px;
+    height: 100px;
+}
+
+.fire {
+    background-image: url('../img/fire.gif');
+    background-size: 70px auto;
+    background-repeat: repeat-x;
+}
+
+.spikes {
+    top: 30px;
+}
+
+.game_over {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.score_result {
+    text-align: center;
+    font-size: 8rem;
 }
