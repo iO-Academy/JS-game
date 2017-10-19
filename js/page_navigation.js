@@ -75,8 +75,7 @@ function resume_game() {
  * Display a box showing the instructions.
  */
 function display_instructions() {
-    $(".js_instructions").css("display", "block")
-    $(".game_title").css("display", "none")
+    $(".game_instruction").css("display", "block")
     $('body').off('keypress')
 
     $('.close_instructions_button').on('click', close_instructions)

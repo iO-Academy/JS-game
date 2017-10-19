@@ -47,8 +47,8 @@ function end_game() {
     $('.cow_target_container').stop()
     $('.cow_target_container').remove()
     clearTimeout(timeout)
-    $('.play_area').css('display', 'none')
-    $('.game_over').css('display', 'block')
+    display_screen(".js_game_over")
+    $('body').off('keypress')
     $(".score_result").text($(".score_value").text())
 }
 
