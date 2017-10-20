@@ -1,6 +1,6 @@
-// var fall_time = 500
-// var interval_between_cows = 1000
-// var timeout
+var fall_time
+var interval_between_cows
+var timeout
 
 /**
  * iterates core functions
@@ -16,7 +16,6 @@ function game_loop() {
  * @param fall_time  number time it takes for cow to fall
  */
 function create_cow(fall_time) {
-
     var column_number = Math.floor(Math.random() * 6)  // Random number from 0 to 5.
 
     // Plus 5 because cows are 10 pixels narrower than the 110 pixels wide columns.
@@ -27,8 +26,7 @@ function create_cow(fall_time) {
         "<div class='cow_target js_clickable_cow'></div>" +
         "</div>")
 
-    $container_div.css({'top':'-177px', 'left': horizontal_position + 'px'})
-
+    $container_div.css({'top': '-177px', 'left': horizontal_position + 'px'})
     $(".play_area").append($container_div);
     $container_div.animate({ top: '343px'}, fall_time, function(){dead_cow($container_div)})
 }
@@ -38,19 +36,14 @@ function create_cow(fall_time) {
  */
 function go_to_game() {
     $(".lives_value").text("5")
-    $(".score_value").text("0")
+    $(".score_value").text("000")
     interval_between_cows = 2000
     fall_time = 2500
-    $(".game_title").css("display", "none")
-    $(".play_area").css("display","block")
     game_loop()
 }
 
 /**
- * Reduces interval for cows being created and increases speed at which they fa
-
-/**
- * Removed cows when they hit the spikes, make them fade out and change image. Also minus a life.
+ * Removes cows when they hit the spikes, makes them fade out and change image. Also minus a life.
  */
 function dead_cow($cow) {
     $('.cow_target', $cow).removeClass('js_clickable_cow')
@@ -66,11 +59,7 @@ function dead_cow($cow) {
  * Reduces interval for cows being created and increases speed at which they fall
  */
 function increase_speed() {
-    if (interval_between_cows > 500 && fall_time > 1100) {
-        fall_time *= 0.98
-        interval_between_cows *= 0.97
+    if (fall_time > 2500) {
+        fall_time *= 0.7
     }
 }
-
-$(".start_button").click(go_to_game)
-

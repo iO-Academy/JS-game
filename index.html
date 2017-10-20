@@ -2,46 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Cow heroes</title>
+    <title>PARACHUTING COWS!</title>
 </head>
 <body>
-    <div class="game">
-        <div class="game_title absolute">
-            <div class="start_buttons">
-                <h1>GAME<br>TITLE</h1>
-                <p class="buttons"><a class="start_button" href="#">Start</a></p>
-                <p class="buttons"><a class="instruction_button" href="#">Instructions</a></p>
-            </div>
+<div class="game">
+    <div class="game_title absolute js_screen js_game_title">
+        <div class="start_buttons">
+            <h1>Parachuting<br>Cows</h1>
+            <p class="buttons"><a class="start_button" href="#">Start</a></p>
+            <p class="buttons"><a class="instructions_button" href="#">Instructions</a></p>
         </div>
-        <div class="play_area">
-            <img src="img/night-sky-web.png" alt="background">
-            <div class="absolute top_nav">
-                <img class="ufo" src="img/ufos-night.png" alt="">
-                <div class="absolute statistic">
-                    <p class="lives">Lives: <span class="lives_value">5</span></p>
-                    <p class="pause"><a class="pause_button" href="#">Pause</a></p>
-                </div>
-            </div>
-            <div class="absolute bottom">
-                <div class="fire"></div>
-                <img class="spikes" src="img/spikes.png" alt="spikes">
-                <img class="barn" src="img/barn.png" alt="barn">
-                <div class="absolute score">
-                    <p>Score: <span class="score_value">0</span></p>
-                </div>
-            </div>
+    </div>
+    <div class="game_pause absolute js_screen js_game_pause">
+        <div class="resume_buttons_container">
+            <p class="buttons"><a class="resume_button" href="#">Resume</a></p>
+            <p class="buttons"><a class="instructions_button" href="#">Instructions</a></p>
         </div>
-        <div class="game_over absolute">
-            <div class="start_buttons">
-                <h1><span class="score_result"></span></h1>
-                <p class="buttons"><a class="start_button" href="#">Start again</a></p>
-                <p class="buttons"><a class="instruction_button" href="#">Instructions</a></p>
+    </div>
+    <div class="game_over absolute js_screen js_game_over">
+        <div class="start_buttons">
+            <h1><span class="score_result"></span></h1>
+            <p class="buttons"><a class="start_button" href="#">Start again</a></p>
+            <p class="buttons"><a class="instructions_button" href="#">Instructions</a></p>
+        </div>
+    </div>
+    <div class="game_instructions absolute js_screen js_instructions">
+        <div class="instructions absolute">
+            <div class="instructions_text">
+                <p class="buttons"><a class="close_instructions_button" href="#">Close</a></p>
+                <h1 class="instructions_title">Parachuting cows</h1>
+                <p class="instructions_item">
+                    Aliens have abducted your Bovine Best Friends (BBFs) and are dropping
+                    them from spaceships at increasing speed to 'meat' their 'udder' doom
+                    on the spikes below.
+                </p>
+                <p class="instructions_item">
+                    Luckily, the cows have parachutes to slow their fall. Lock onto a cow
+                    and send them a jetpack to 'mooove' them safely home.
+                </p>
+                <h1 class="instructions_title">How to play:</h1>
+                <ol>
+                    <li class="instructions_item">Press START button to begin</li>
+                    <li class="instructions_item">To save a cow, click on it to send it a jetpack</li>
+                    <li class="instructions_item">
+                        Fail to save a cow and you'll lose a life. Fail to save 5 cows and
+                        the game is over.
+                    </li>
+                    <li class="instructions_item">
+                        To pause the game press the PAUSE button located in the top right of
+                        the screen, or press the [P] key on your keyboard. To resume press the
+                        RESUME button or the [R] key.
+                    </li>
+                </ol>
+                <h5>Vector Illustration by <a href="https://www.vecteezy.com/">Vecteezy!</a></h5>
+                <h5><a href="http://www.fg-a.com">Free Animations - Clipart - Animated Gifs</a></h5>
             </div>
         </div>
     </div>
+    <div class="play_area js_screen js_play_area">
+        <img src="img/night-sky-web.png" alt="background">
+        <div class="absolute top_nav">
+            <div class="ufo"></div>
+            <div class="ufo_beam"></div>
+            <div class="absolute statistic">
+                <p class="lives">Lives: <span class="lives_value">5</span></p>
+                <p class="pause"><a class="pause_button" href="#">Pause</a></p>
+            </div>
+        </div>
+        <div class="absolute bottom">
+            <div class="fire"></div>
+            <img class="spikes" src="img/spikes.png" alt="spikes">
+            <img class="barn" src="img/barn.png" alt="barn">
+            <div class="absolute score">
+                <p><span class="score_value">000</span></p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery.pause.js"></script>
+<script type="text/javascript" src="js/page_navigation.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/targetCowFunctions.js"></script>
 </html>
