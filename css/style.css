@@ -1,10 +1,27 @@
 * {
     box-sizing: border-box;
-    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'silkscreennormal', Arial, sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+@font-face {
+    font-family: 'silkscreennormal';
+    src: url('slkscr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
 }
 
 .absolute {
@@ -19,14 +36,20 @@ body {
     overflow: hidden;
 }
 
-/*Start game and pause game pages*/
+.start_buttons h1 {
+    color: rgba(255, 255, 255, 1);
+    font-size: 6rem;
+    text-align: right;
+    padding: 0 50px;
+}
+
 .cow_target_container {
     width: 100px;
-    height: 100px;
+    height: 192px;
     z-index: 5;
 }
 
-.cow_target{
+.cow_target {
     height: 114px;
     width: 100px;
     background-image: url("../img/cow-100px.png");
@@ -34,15 +57,14 @@ body {
     z-index: 10;
 }
 
-.parachute_target{
+.parachute_target {
     height: 78px;
     width: 100px;
     background-image: url("../img/parachute-100px.png");
 }
 
-/*Game main page*/
 .game_title,
-.game_instruction,
+.game_instructions,
 .game_pause,
 .game_over {
     width: 100%;
@@ -51,36 +73,38 @@ body {
     position: absolute;
     font-weight: 700;
     font-size: 1.5rem;
-    text-transform: uppercase;
 }
 
 .resume_buttons_container {
     margin-top: 250px;
 }
 
-.game_title {
-    display: block;
-}
-
-.start_buttons_container,
-.resume_buttons_container {
-    display: block;
-    width: 300px;
-    position: relative;
-    left: 450px;
-}
-
 .buttons {
     display: block;
+    width: 250px;
+    position: relative;
     text-align: center;
     line-height: 50px;
-    border: 3px solid #fff;
+    border: 3px solid rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, .7);
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    left: 500px;
+}
+
+.buttons:hover,
+.buttons a:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(255, 0, 0, 1);
 }
 
 .game_title a,
 .game_pause a,
+.instructions p a,
 .play_area a,
 .game_over a {
+    display: block;
     width: 100%;
     height: 100%;
     text-decoration: none;
@@ -88,25 +112,93 @@ body {
     transition: .3s;
 }
 
-.game_title a:hover,
-.game_over a:hover,
-.game_pause a:hover {
-    background-color: #fff;
-    color: #000000;
+/*=================*/
+
+/*Instruction page*/
+.game_instructions {
+    display: none;
+}
+
+.instructions_text {
+    width: 700px;
+    height: 500px;
+    margin: 50px;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    color: rgba(115, 108, 108, 1);
+    line-height: 1.6rem;
+    overflow: scroll;
+}
+
+.instructions_text h1 {
+    margin: 35px 0;
+}
+
+.instructions_text .buttons {
+    margin: 0 auto;
+    left: auto;
+    border: 3px solid rgba(255, 0, 0, 0.9);
+    background-color: transparent;
+}
+
+.instructions_title {
+    color: rgba(255, 0, 0, 1);
+    text-align: center;
+    font-size: 4rem;
+}
+
+.instructions_item {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    text-align: justify;
+    text-indent: 20px;
+    font-weight: bold;
+}
+
+.instructions a {
+    color: rgba(255, 0, 0, 1);
+    text-decoration: none;
+}
+
+.instructions a:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 1);
+}
+
+.instructions h5 {
+    text-align: center;
 }
 
 /*Game play page (play area)*/
 .top_nav {
     width: 100%;
     height: 60px;
-    top: -1px; /* overlap top of game area by 1 pixel to stop cow showing through. */
+    top: 0;
 }
 
 .ufo {
     position: absolute;
     z-index: 10;
-    width: 100%;
+    background-size: 110px auto;
+    background-repeat: repeat-x;
+    width: 660px;
+    height: 100px;
+    background-image: url('../img/ufo.gif');
     top: 0;
+}
+
+.ufo_beam {
+    display: block;
+    position: absolute;
+    z-index: 4;
+    background-image: url('../img/ufo-beam.png');
+    background-size: 110px 500px;
+    background-repeat: repeat-x;
+    width: 660px;
+    height: 500px;
+    top: 75px;
 }
 
 .play_area {
@@ -130,26 +222,30 @@ body {
     display: inline-block;
     margin: 0;
     line-height: 60px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 1);
 }
 
 .pause_button {
     text-decoration: none;
     transition: .3s;
+    color: rgba(255, 0, 0, 1);
 }
 
 .pause_button:hover {
-    color: #00d59e;
+    color: #ff8978;
 }
 
 .barn {
     position: absolute;
-    bottom: -5px;
+    bottom: -10px;
     right: -70px;
     width: 230px;
     z-index: 15;
 }
 
 /*Bottom*/
+
 .bottom {
     width: 100%;
     height: 100px;
@@ -165,13 +261,15 @@ body {
 
 .score p {
     position: absolute;
-    right: 15px;
-    top: 20px;
+    right: 25px;
+    top: -60px;
     margin: 0;
+    font-size: 3.5rem;
     line-height: 100px;
 }
 
-.fire, .spikes {
+.fire,
+.spikes {
     position: absolute;
     z-index: 30;
     bottom: 0;
@@ -186,20 +284,13 @@ body {
 }
 
 .spikes {
-    top: 30px;
+    top: 60px;
 }
 
 .game_over {
     display: none;
 }
 
-h1 {
-    text-align: center;
-    font-size: 5rem;
-    margin-bottom: 10px;
-}
-
-.score_result {
-    text-align: center;
+.game_over h1 {
     font-size: 8rem;
 }

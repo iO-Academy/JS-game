@@ -26,20 +26,19 @@ function create_cow(fall_time) {
         "<div class='cow_target js_clickable_cow'></div>" +
         "</div>")
 
-    $container_div.css({'top':'-177px', 'left': horizontal_position + 'px'})
+    $container_div.css({'top': '-177px', 'left': horizontal_position + 'px'})
     $(".play_area").append($container_div);
-    $container_div.animate({ top: '343px'}, fall_time, dead_cow)
+    $container_div.animate({top: '343px'}, fall_time, dead_cow)
 }
 
 /**
  * Switch from intro page to playing page
  */
 function go_to_game() {
+    $(".lives_value").text("5")
+    $(".score_value").text("000")
     interval_between_cows = 2000
     fall_time = 3000
-    $(".score_value").text(0)
-    $(".lives_value").text(5)
-
     game_loop()
 }
 

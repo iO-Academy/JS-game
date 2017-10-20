@@ -12,7 +12,7 @@ function save_cow(e) {
 }
 
 function increase_interval_between_cows() {
-    if((parseInt($(".score_value").text()) % 5) == 0) {
+    if ((parseInt($(".score_value").text()) % 5) == 0) {
         interval_between_cows *= 0.8
     }
 }
@@ -21,8 +21,12 @@ function increase_interval_between_cows() {
  *increases score on screen
  */
 function increment_score() {
+
     var score_element = parseInt($(".score_value").text()) + 1
-    $(".score_value").text(score_element)
+    var pad = "000"
+    var score_string = "" + score_element
+
+    $(".score_value").text(pad.substring(0, 3 - score_string.length) + score_string)
 }
 
 /**
@@ -30,8 +34,8 @@ function increment_score() {
  */
 function lose_life() {
     var remaining_lives = parseInt($(".lives_value").text()) - 1
-    $(".lives_value").text(remaining_lives)
 
+    $(".lives_value").text(remaining_lives)
     if (remaining_lives < 1) {
         end_game()
     }
@@ -43,7 +47,8 @@ function lose_life() {
 function end_game() {
     $('.cow_target_container').stop().remove()
     clearTimeout(timeout)
-    display_screen('.js_game_over')
+    display_screen(".js_game_over")
+    $('body').off('keypress')
     $(".score_result").text($(".score_value").text())
 }
 
@@ -51,7 +56,7 @@ function end_game() {
  *function to fade out and remove cow from dom
  */
 function remove_cow(cow) {
-    setTimeout(function() {
+    setTimeout(function () {
         $(cow).fadeOut('slow', function() {
             $(this).remove()
         })

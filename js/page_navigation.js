@@ -13,9 +13,9 @@ function display_screen(screen_name) {
  */
 function activate_play_area() {
     display_screen('.js_play_area')
-    $('body').off('keypress').on('keypress', function(e) {
+    $('body').off('keypress').on('keypress', function (e) {
         // [P] is keycode 112
-        if((e.keyCode || e.which) == 112) {
+        if ((e.keyCode || e.which) == 112) {
             pause_game()
         }
     })
@@ -36,14 +36,14 @@ function initiate_game() {
 function pause_game() {
     display_screen('.js_game_pause')
 
-    $('body').off('keypress').on('keypress', function(e) {
+    $('body').off('keypress').on('keypress', function (e) {
         // [R] is keycode 114
-        if((e.keyCode || e.whichcode) == 114) {
+        if ((e.keyCode || e.whichcode) == 114) {
             resume_game()
         }
     })
     clearTimeout(timeout)
-    $('.cow_target_container').each(function() {
+    $('.cow_target_container').each(function () {
         $(this).pause()
     })
 }
@@ -59,12 +59,28 @@ function resume_game() {
     })
 }
 
+/**
+ * Display a box showing the instructions.
+ */
+function display_instructions() {
+    $(".game_instructions").css("display", "block")
+    $('.close_instructions_button').on('click', close_instructions)
+}
+
+/**
+ * Hide the box showing the instructions.
+ */
+function close_instructions() {
+    $(".js_instructions").css("display", "none")
+}
+
 //Shows game_title page and adds initial event listener to initiate the game
 display_screen('.js_game_title')
 
 $('.start_button').on('click', initiate_game)
 $('.pause_button').on('click', pause_game)
 $('.resume_button').on('click', resume_game)
+$('.instructions_button').on('click', display_instructions)
 
 
 
