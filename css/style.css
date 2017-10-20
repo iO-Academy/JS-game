@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    font-family: 'silkscreennormal';
+    font-family: 'silkscreennormal', Arial, sans-serif;
     font-size: 14px;
     font-size: 1.4rem;
 }
