@@ -25,7 +25,7 @@ function increment_score() {
     var score_element = parseInt($(".score_value").text()) + 1
     var pad = "000"
     var score_string = "" + score_element
-    
+
     $(".score_value").text(pad.substring(0, 3 - score_string.length) + score_string)
 }
 
@@ -57,7 +57,7 @@ function end_game() {
  */
 function remove_cow(cow) {
     setTimeout(function () {
-        $(cow).fadeOut('slow', function () {
+        $(cow).fadeOut('slow', function() {
             $(this).remove()
         })
     }, 200);
@@ -79,7 +79,7 @@ function rocket_cow($cow_container) {
             top: 400,
             left: 700
         }, 750,
-        function () {
+        function() {
             increment_score()
             remove_cow($cow_container)
         })
