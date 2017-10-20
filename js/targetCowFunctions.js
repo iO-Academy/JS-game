@@ -101,9 +101,9 @@ function remove_parachute(e) {
     var $cow_container = $(clicked_parachute).parent()
     $cow_container.stop()
     $cow_container.animate({
-            top: 400,
+            top: 400
         }, 200,
-        function () {
+        function() {
         dead_cow($cow_container)
         remove_cow($cow_container)
     })
