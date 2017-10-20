@@ -54,7 +54,7 @@ function pause_game() {
 function resume_game() {
     activate_play_area()
     game_loop()
-    $('.cow_target_container').each(function () {
+    $('.cow_target_container').each(function() {
         $(this).resume()
     })
 }

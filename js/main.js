@@ -48,7 +48,7 @@ function go_to_game() {
 function dead_cow() {
     $('.cow_target', this).removeClass('js_clickable_cow').css("background-image", "url('../JS-game/img/dead_cow.png')")
     $('.parachute_target', this).css("visibility", "hidden")
-    $(this).fadeOut('slow', function () {
+    $(this).fadeOut('slow', function() {
         $(this).remove()
     })
     lose_life()
