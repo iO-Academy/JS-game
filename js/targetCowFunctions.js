@@ -11,9 +11,12 @@ function save_cow(e) {
     increase_interval_between_cows()
 }
 
+/**
+ * Links cow interval to score and sets a maximum interval
+ */
 function increase_interval_between_cows() {
-    if ((parseInt($(".score_value").text()) % 5) == 0) {
-        interval_between_cows *= 0.8
+    if ((parseInt($(".score_value").text()) % 1) == 0 && interval_between_cows > 400) {
+        interval_between_cows *= 0.97
     }
 }
 
@@ -21,7 +24,6 @@ function increase_interval_between_cows() {
  *increases score on screen
  */
 function increment_score() {
-
     var score_element = parseInt($(".score_value").text()) + 1
     var pad = "000"
     var score_string = "" + score_element
@@ -83,4 +85,26 @@ function rocket_cow($cow_container) {
             increment_score()
             remove_cow($cow_container)
         })
+}
+
+/**
+ * False target functions: hide clicked parachute and drop cow at speed and call dead cow and remove cow functions.
+ * @param e event-object targets the clicked parachute
+ */
+$('body').on('click', '.parachute_target', function(e) {
+    remove_parachute(e)
+})
+
+function remove_parachute(e) {
+    var clicked_parachute = e.target
+    $(clicked_parachute).css("visibility", "hidden")
+    var $cow_container = $(clicked_parachute).parent()
+    $cow_container.stop()
+    $cow_container.animate({
+            top: 400
+        }, 200,
+        function() {
+        dead_cow($cow_container)
+        remove_cow($cow_container)
+    })
 }
